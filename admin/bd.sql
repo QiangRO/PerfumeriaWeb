@@ -1,8 +1,8 @@
-CREATE DATABASE ventas_php;
+CREATE DATABASE bd_beauty;
 
 
 
-USE ventas_php;
+USE bd_beauty;
 
 
 
@@ -10,8 +10,10 @@ CREATE TABLE productos(
     id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     codigo VARCHAR(255) NOT NULL,
     nombre VARCHAR(255) NOT NULL,
-    compra DECIMAL(8,2) NOT NULL,
-    venta DECIMAL(8,2) NOT NULL,
+    descripcion VARCHAR(255) NOT NULL,
+    categoria VARCHAR(255) NOT NULL,
+    precioCompra DECIMAL(8,2) NOT NULL,
+    precioVenta DECIMAL(8,2) NOT NULL,
     existencia INT NOT NULL
 );
 

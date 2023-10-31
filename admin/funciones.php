@@ -475,7 +475,7 @@ function editar($sentencia, $parametros)
 
 function conectarBaseDatos()
 {
-    $host = "localhost";
+    $host = "localhost:3307";
     $db   = "ventas_php";
     $user = "root";
     $pass = "";
