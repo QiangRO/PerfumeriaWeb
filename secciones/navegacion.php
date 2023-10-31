@@ -49,7 +49,7 @@
                     <a href="productos.php" class="nav-item nav-link <?php if ($pagina_activa == 'productos') echo 'active'; ?>">Productos</a>
                     <a href="about.php" class="nav-item nav-link <?php if ($pagina_activa == 'acerca') echo 'active'; ?>">Acerca</a>
                 </div>
-                <a href="ventas/login.php" class="btn btn-primary d-none d-lg-block">Iniciar Sesion</a>
+                <a href="login.php" class="btn btn-primary d-none d-lg-block">Iniciar Sesion</a>
             </div>
         </nav>
     </div>
