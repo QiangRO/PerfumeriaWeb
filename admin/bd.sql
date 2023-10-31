@@ -16,7 +16,8 @@ CREATE TABLE productos(
 CREATE TABLE clientes(
     id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(255) NOT NULL,
-    telefono VARCHAR(25) NOT NULL,
+    correo VARCHAR(255) NOT NULL,
+    telefono INT NOT NULL,
     direccion VARCHAR(255) NOT NULL
 );
 

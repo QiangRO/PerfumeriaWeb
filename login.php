@@ -1,5 +1,6 @@
 <?php
 include_once 'secciones/header.php';
+include_once 'secciones/navegacion.php';
 ?>
 <div class="container bg-login">
     <div class="row justify-content-center">
@@ -21,7 +22,7 @@ include_once 'secciones/header.php';
                     <a href="lostpassword.php" class="text-secondary">¿Olvidó su contraseña?</a>
                 </div>
                 <div class="text-center mt-3">
-                    <p>¿No tiene una cuenta? <a href="singup.php" class="text-secondary">Crear cuenta</a></p>
+                    <p>¿No tiene una cuenta? <a href="register.php" class="text-secondary">Crear cuenta</a></p>
                 </div>
             </div>
         </div>
