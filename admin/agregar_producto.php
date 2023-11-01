@@ -14,8 +14,16 @@ if(empty($_SESSION['usuario'])) header("location: login.php");
             <input type="text" name="codigo" class="form-control" id="codigo" placeholder="Escribe el código del producto">
         </div>
         <div class="mb-3">
-            <label for="nombre" class="form-label">Nombre o descripción</label>
+            <label for="nombre" class="form-label">Nombre</label>
             <input type="text" name="nombre" class="form-control" id="nombre" placeholder="Ej. Crema Nivea">
+        </div>
+        <div class="mb-3">
+            <label for="descripcion" class="form-label">Descripción</label>
+            <input type="text" name="descripcion" class="form-control" id="descripcion" placeholder="Descripcion">
+        </div>
+        <div class="mb-3">
+            <label for="categoria" class="form-label">Categoria</label>
+            <input type="text" name="categoria" class="form-control" id="categoria" placeholder="Categoria del producto">
         </div>
         <div class="row">
             <div class="col">
@@ -47,11 +55,15 @@ if(empty($_SESSION['usuario'])) header("location: login.php");
 if(isset($_POST['registrar'])){
     $codigo = $_POST['codigo'];
     $nombre = $_POST['nombre'];
+    $descripcion = $_POST['descripcion'];
+    $categoria = $_POST['categoria'];
     $compra = $_POST['compra'];
     $venta = $_POST['venta'];
     $existencia = $_POST['existencia'];
     if(empty($codigo) 
-    || empty($nombre) 
+    || empty($nombre)
+    || empty($descripcion)
+    || empty($categoria) 
     || empty($compra) 
     || empty($venta)
     || empty($existencia)){
@@ -63,7 +75,7 @@ if(isset($_POST['registrar'])){
     } 
     
     include_once "funciones.php";
-    $resultado = registrarProducto($codigo, $nombre, $compra, $venta, $existencia);
+    $resultado = registrarProducto($codigo, $nombre, $descripcion, $categoria, $compra, $venta, $existencia);
     if($resultado){
         echo'
         <div class="alert alert-success mt-3" role="alert">

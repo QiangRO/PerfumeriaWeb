@@ -2,21 +2,21 @@
 include_once 'secciones/header.php';
 include_once 'secciones/navegacion.php';
 ?>
-<div class="container bg-login">
+<div class="container">
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="login-wrapper bg-white p-4 mt-5">
                 <h2 class="text-center mb-4">Iniciar sesión</h2>
-                <form>
+                <form action="function/authcode.php" method="POST">
                     <div class="form-group">
                         <label for="email">Correo electrónico:</label>
-                        <input type="text" id="email" class="form-control" placeholder="Ingrese su correo electrónico" required>
+                        <input type="text" id="email" name="email" class="form-control" placeholder="Ingrese su correo electrónico" required>
                     </div>
                     <div class="form-group">
                         <label for="password">Contraseña:</label>
-                        <input type="password" id="password" class="form-control" placeholder="Ingrese su contraseña" required>
+                        <input type="password" id="password" name="password" class="form-control" placeholder="Ingrese su contraseña" required>
                     </div>
-                    <button type="submit" class="btn btn-primary d-none d-lg-block btn-block">Iniciar sesión</button>
+                    <button type="submit" name="login_btn" class="btn btn-primary d-none d-lg-block btn-block">Iniciar sesión</button>
                 </form>
                 <div class="text-center mt-3">
                     <a href="lostpassword.php" class="text-secondary">¿Olvidó su contraseña?</a>

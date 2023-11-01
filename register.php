@@ -9,8 +9,9 @@ include_once 'secciones/navegacion.php';
     <div class="row justify-content-center">
         <div class="col-md-6">
             <?php
-            if (isset($_SESSION['message'])) {
-            ?>
+            if (isset($_SESSION['message']))
+            {
+                ?>
                 <div class="alert alert-warning alert-dismissible fade show" role="alert">
                     <strong>Hey!</strong> <?= $_SESSION['message']; ?>
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -18,7 +19,7 @@ include_once 'secciones/navegacion.php';
                 <?php
                 unset($_SESSION['message']);
             }
-                ?>
+            ?>
                 
                 <div class="register-wrapper bg-white p-4 mt-5">
                     <form action="function/authcode.php" method="POST">

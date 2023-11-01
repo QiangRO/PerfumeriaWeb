@@ -18,12 +18,20 @@ $producto = obtenerProductoPorId($id);
     <h3>Editar producto</h3>
     <form method="post">
         <div class="mb-3">
-            <label for="codigo" class="form-label">Código de barras</label>
+            <label for="codigo" class="form-label">Código</label>
             <input type="text" name="codigo" class="form-control" value="<?php echo $producto->codigo;?>" id="codigo" placeholder="Escribe el código de barras del producto">
         </div>
         <div class="mb-3">
-            <label for="nombre" class="form-label">Nombre o descripción</label>
-            <input type="text" name="nombre" class="form-control" value="<?php echo $producto->nombre;?>" id="nombre" placeholder="Ej. Papas">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" name="nombre" class="form-control" value="<?php echo $producto->nombre;?>" id="nombre" placeholder="Escribe el nombre del producto">
+        </div>
+        <div class="mb-3">
+            <label for="descripcion" class="form-label">Descripción</label>
+            <input type="text" name="descripcion" class="form-control" value="<?php echo $producto->descripcion;?>" id="descripcion" placeholder="Escribe la descripcion del producto">
+        </div>
+        <div class="mb-3">
+            <label for="categoria" class="form-label">Categoria</label>
+            <input type="text" name="categoria" class="form-control" value="<?php echo $producto->categoria;?>" id="categoria" placeholder="Escribe la categoria del producto">
         </div>
         <div class="row">
             <div class="col">
@@ -55,11 +63,15 @@ $producto = obtenerProductoPorId($id);
 if(isset($_POST['registrar'])){
     $codigo = $_POST['codigo'];
     $nombre = $_POST['nombre'];
+    $descripcion = $_POST['descripcion'];
+    $categoria = $_POST['categoria'];
     $compra = $_POST['compra'];
     $venta = $_POST['venta'];
     $existencia = $_POST['existencia'];
     if(empty($codigo) 
-    || empty($nombre) 
+    || empty($nombre)
+    || empty($descripcion)
+    || empty($categoria)
     || empty($compra) 
     || empty($venta)
     || empty($existencia)){
@@ -71,13 +83,17 @@ if(isset($_POST['registrar'])){
     } 
     
     include_once "funciones.php";
-    $resultado = editarProducto($codigo, $nombre, $compra, $venta, $existencia, $id);
+    $resultado = editarProducto($codigo, $nombre, $descripcion, $categoria, $compra, $venta, $existencia, $id);
     if($resultado){
         echo'
         <div class="alert alert-success mt-3" role="alert">
-            Información del producto registrada con éxito.
-        </div>';
+            Información del producto actualizada con éxito.
+        </div>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            Información del producto actualizada con éxito.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        ';
     }
-    
 }
 ?>

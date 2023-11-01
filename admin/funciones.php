@@ -413,10 +413,10 @@ function eliminarProducto($id)
     return eliminar($sentencia, $id);
 }
 
-function editarProducto($codigo, $nombre, $compra, $venta, $existencia, $id)
+function editarProducto($codigo, $nombre, $descripcion, $categoria, $compra, $venta, $existencia, $id)
 {
-    $sentencia = "UPDATE productos SET codigo = ?, nombre = ?, compra = ?, venta = ?, existencia = ? WHERE id = ?";
-    $parametros = [$codigo, $nombre, $compra, $venta, $existencia, $id];
+    $sentencia = "UPDATE productos SET codigo = ?, nombre = ?, descripcion = ?, categoria = ?, compra = ?, venta = ?, existencia = ? WHERE id = ?";
+    $parametros = [$codigo, $nombre, $descripcion, $categoria, $compra, $venta, $existencia, $id];
     return editar($sentencia, $parametros);
 }
 
@@ -437,10 +437,17 @@ function obtenerProductos($busqueda = null)
     return select($sentencia, $parametros);
 }
 
-function registrarProducto($codigo, $nombre, $compra, $venta, $existencia)
+// function registrarProducto($codigo, $nombre, $compra, $venta, $existencia)
+// {
+//     $sentencia = "INSERT INTO productos(codigo, nombre, compra, venta, existencia) VALUES (?,?,?,?,?)";
+//     $parametros = [$codigo, $nombre, $compra, $venta, $existencia];
+//     return insertar($sentencia, $parametros);
+// }
+
+function registrarProducto($codigo, $nombre, $descripcion, $categoria, $compra, $venta, $existencia)
 {
-    $sentencia = "INSERT INTO productos(codigo, nombre, compra, venta, existencia) VALUES (?,?,?,?,?)";
-    $parametros = [$codigo, $nombre, $compra, $venta, $existencia];
+    $sentencia = "INSERT INTO productos(codigo, nombre, descripcion, categoria, compra, venta, existencia) VALUES (?,?,?,?,?,?,?)";
+    $parametros = [$codigo, $nombre, $descripcion, $categoria, $compra, $venta, $existencia];
     return insertar($sentencia, $parametros);
 }
 
@@ -476,7 +483,7 @@ function editar($sentencia, $parametros)
 function conectarBaseDatos()
 {
     $host = "localhost:3307";
-    $db   = "ventas_php";
+    $db   = "bd_beauty";
     $user = "root";
     $pass = "";
     $charset = 'utf8mb4';

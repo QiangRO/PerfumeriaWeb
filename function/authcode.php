@@ -1,7 +1,8 @@
 <?php
-    include("dbconnect.php");
+    include_once("dbconnect.php");
 
-    if(isset ($_POST["register_btn"])) {
+    if(isset ($_POST['register_btn']))
+    {
         $name = mysqli_real_escape_string($con, $_POST['name']);
         $email = mysqli_real_escape_string($con, $_POST['email']);
         $phone = mysqli_real_escape_string($con, $_POST['phone']);
@@ -40,5 +41,31 @@
             $_SESSION['message'] = "Las contraseñas no coinciden";
             header('Location: ../register.php');
         }
+        }
+    }
+    else if(isset($_POST['login_btn']))
+    {
+        $email = mysqli_real_escape_string($con, $_POST['email']);
+        $password= mysqli_real_escape_string($con, $_POST['password']);
+
+        $login_query = "SELECT * FROM clientes WHERE correo = '$email' AND password = '$password'";
+        $login_query_run = mysqli_query($con, $login_query);
+        if(mysqli_num_rows($login_query_run)>0)
+        {
+            $_SESSION['auth'] = true;
+            $userdata = mysqli_fetch_array( $login_query_run );
+            $username = $userdata['name'];
+            $useremail= $userdata['email'];
+
+            $_SESSION['auth_user'] = [
+                'name'=> $username,
+                'email'=> $useremail
+            ];
+            $_SESSION['message'] = "Iniciaste sesion con exito";
+            header('Location: ../index.php');
+        }else
+        {
+            $_SESSION["message"] = "Credencial invalida";
+            header('Location:../login.php');
         }
     }

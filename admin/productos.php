@@ -38,6 +38,8 @@ $cartas = [
             <tr>
                 <th>Código</th>
                 <th>Nombre</th>
+                <th>Descripcion</th>
+                <th>Categoria</th>
                 <th>Precio compra</th>
                 <th>Precio venta</th>
                 <th>Ganancia</th>
@@ -53,6 +55,8 @@ $cartas = [
                 <tr>
                     <td><?= $producto->codigo; ?></td>
                     <td><?= $producto->nombre; ?></td>
+                    <td><?= $producto->descripcion; ?></td>
+                    <td><?= $producto->categoria; ?></td>
                     <td><?= 'Bs.'.$producto->compra; ?></td>
                     <td><?= 'Bs.'.$producto->venta; ?></td>
                     <td><?= 'Bs.'. floatval($producto->venta - $producto->compra); ?></td>
