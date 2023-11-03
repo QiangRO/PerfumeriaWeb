@@ -78,3 +78,4 @@ $cartas = [
         </tbody>
     </table>
 </div>
+<?php include_once "funciones.php"; ?>
