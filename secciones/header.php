@@ -24,7 +24,7 @@
     <link href="public/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="public/css/style.css" rel="stylesheet">
     <!-- <link href="css/stylelogin.css" rel="stylesheet"> -->
     
 </head>

@@ -4,7 +4,7 @@ include_once "encabezado.php";
 <div class="container">
     <div class="row m-5 no-gutters shadow-lg">
         <div class="col-md-6 d-none d-md-block">
-            <center><img src="header.png" class="img-fluid" style="min-height:100%;" /></center>
+            <center><img src="../public/images/admin/header.png" class="img-fluid" style="min-height:100%;" /></center>
         </div>
         <div class="col-md-6 bg-white p-5">
             <h3 class="pb-3">Bienvenido al panel de control</h3>

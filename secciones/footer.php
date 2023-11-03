@@ -81,12 +81,12 @@
     <script src="public/lib/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="public/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
-    <!-- Contact Javascript File -->
+    <!-- Contact Javascript File
     <script src="mail/jqBootstrapValidation.min.js"></script>
-    <script src="mail/contact.js"></script>
+    <script src="mail/contact.js"></script> -->
 
     <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    <script src="../public/js/main.js"></script>
     </body>
 
     </html>
