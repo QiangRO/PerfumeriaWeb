@@ -80,13 +80,16 @@
     <script src="public/lib/tempusdominus/js/moment.min.js"></script>
     <script src="public/lib/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="public/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="public/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="public/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Contact Javascript File
     <script src="mail/jqBootstrapValidation.min.js"></script>
     <script src="mail/contact.js"></script> -->
 
     <!-- Template Javascript -->
-    <script src="../public/js/main.js"></script>
+    <script src="public/js/main.js"></script>
     </body>
 
     </html>

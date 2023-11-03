@@ -9597,17 +9597,17 @@ h6,
 }
 
 .bg-appointment {
-  background: linear-gradient(rgba(33, 30, 28, 0.7), rgba(33, 40, 28, 0.7)), url(../img/carousel-1.jpg), no-repeat center center;
+  background: linear-gradient(rgba(33, 30, 28, 0.7), rgba(33, 40, 28, 0.7)), url(carousel-3.jpg), no-repeat center center;
   background-size: cover;
 }
 
 .bg-pricing {
-  background: linear-gradient(rgba(33, 30, 28, 0.7), rgba(33, 40, 28, 0.7)), url(../img/carousel-2.jpg), no-repeat center center;
+  background: linear-gradient(rgba(33, 30, 28, 0.7), rgba(33, 40, 28, 0.7)), url(carousel-3.jpg), no-repeat center center;
   background-size: cover;
 }
 
 .bg-login {
-  background: linear-gradient(rgba(33, 30, 28, 0.7), rgba(33, 40, 28, 0.7)), url(../img/carousel-3.jpg), no-repeat center center;
+  background: linear-gradient(rgba(33, 30, 28, 0.7), rgba(33, 40, 28, 0.7)), url(../images/salon/carousel-3.jpg), no-repeat center center;
   background-size: cover;
 }
 

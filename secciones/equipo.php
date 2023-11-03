@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6">
                     <div class="team position-relative overflow-hidden mb-5">
-                        <img class="img-fluid" src="img/team-1.jpg" alt="">
+                        <img class="img-fluid" src="public/images/salon/team-1.jpg" alt="">
                         <div class="position-relative text-center">
                             <div class="team-text bg-primary text-white">
                                 <h5 class="text-white text-uppercase">María Machaca</h5>
@@ -27,7 +27,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="team position-relative overflow-hidden mb-5">
-                        <img class="img-fluid" src="img/team-2.jpg" alt="">
+                        <img class="img-fluid" src="public/images/salon/team-2.jpg" alt="">
                         <div class="position-relative text-center">
                             <div class="team-text bg-primary text-white">
                                 <h5 class="text-white text-uppercase">Ana Lisa Colque</h5>
@@ -44,7 +44,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="team position-relative overflow-hidden mb-5">
-                        <img class="img-fluid" src="img/team-3.jpg" alt="">
+                        <img class="img-fluid" src="public/images/salon/team-3.jpg" alt="">
                         <div class="position-relative text-center">
                             <div class="team-text bg-primary text-white">
                                 <h5 class="text-white text-uppercase">Cindy Nero</h5>
@@ -61,7 +61,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="team position-relative overflow-hidden mb-5">
-                        <img class="img-fluid" src="img/team-4.jpg" alt="">
+                        <img class="img-fluid" src="public/images/salon/team-4.jpg" alt="">
                         <div class="position-relative text-center">
                             <div class="team-text bg-primary text-white">
                                 <h5 class="text-white text-uppercase">Keko Jones</h5>

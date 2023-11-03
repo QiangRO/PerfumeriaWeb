@@ -3,7 +3,7 @@
     <div class="container py-5">
         <div class="row align-items-center">
             <div class="col-lg-6 pb-5 pb-lg-0">
-                <img class="img-fluid w-100" src="img/header.png" alt="">
+                <img class="img-fluid w-100" src="public/images/salon/header.png" alt="">
             </div>
             <div class="col-lg-6">
                 <h6 class="d-inline-block text-primary text-uppercase bg-light py-1 px-2">Acerca de nosotros</h6>

@@ -18,7 +18,7 @@
 
         <div class="service-item position-relative">
 
-            <img class="img-fluid" src="img/service-1.jpg" alt="">
+            <img class="img-fluid" src="public/images/salon/service-1.jpg" alt="">
 
             <div class="service-text text-center">
 
@@ -38,7 +38,7 @@
 
         <div class="service-item position-relative">
 
-            <img class="img-fluid" src="img/service-2.jpg" alt="">
+            <img class="img-fluid" src="public/images/salon/service-2.jpg" alt="">
 
             <div class="service-text text-center">
 
@@ -58,7 +58,7 @@
 
         <div class="service-item position-relative">
 
-            <img class="img-fluid" src="img/service-3.jpg" alt="">
+            <img class="img-fluid" src="public/images/salon/service-3.jpg" alt="">
 
             <div class="service-text text-center">
 
@@ -78,7 +78,7 @@
 
         <div class="service-item position-relative">
 
-            <img class="img-fluid" src="img/service-4.jpg" alt="">
+            <img class="img-fluid" src="public/images/salon/service-4.jpg" alt="">
 
             <div class="service-text text-center">
 
@@ -98,7 +98,7 @@
 
         <div class="service-item position-relative">
 
-            <img class="img-fluid" src="img/service-5.jpg" alt="">
+            <img class="img-fluid" src="public/images/salon/service-5.jpg" alt="">
 
             <div class="service-text text-center">
 
@@ -118,7 +118,7 @@
 
         <div class="service-item position-relative">
 
-            <img class="img-fluid" src="img/service-6.jpg" alt="">
+            <img class="img-fluid" src="public/images/salon/service-6.jpg" alt="">
 
             <div class="service-text text-center">
 

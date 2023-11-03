@@ -25,8 +25,8 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="public/css/style.css" rel="stylesheet">
-    <!-- <link href="css/stylelogin.css" rel="stylesheet"> -->
-    
+    <!-- Bootstrap -->
+    <link href="public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
