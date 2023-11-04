@@ -73,7 +73,6 @@ if(isset($_POST['registrar'])){
         </div>';
         return;
     } 
-    
     include_once "funciones.php";
     $resultado = registrarProducto($codigo, $nombre, $descripcion, $categoria, $compra, $venta, $existencia);
     if($resultado){
