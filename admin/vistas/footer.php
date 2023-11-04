@@ -1,10 +1,10 @@
-<footer class="main-footer">
+<!-- <footer class="main-footer">
   <div class="pull-right hidden-xs">
     <b>Version</b> 0.0.1
   </div>
   <strong>Copyright &copy; 2018-2019 <a target="_blank" href="https://www.youtube.com/channel/UC-O4MJh9KfFBYsIfjzeaYPw">Angshelino</a>.</strong> Todo los derechos
   reservados.
-</footer>
+</footer> -->
 
 <!-- jQuery 3 -->
 
