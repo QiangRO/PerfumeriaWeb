@@ -17,7 +17,7 @@ include_once 'secciones/navegacion.php';
             ?>
 <?php
 include_once 'secciones/carrusel.php';
-include_once 'secciones/servicios.php';
+// include_once 'secciones/servicios.php';
 include_once 'secciones/equipo.php';
 include_once 'secciones/carrusel-productos.php';
 include_once 'secciones/footer.php';

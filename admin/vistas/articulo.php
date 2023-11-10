@@ -22,9 +22,9 @@ if (!isset($_SESSION['nombre'])) {
                   <button class="btn btn-success" onclick="mostrarform(true)" id="btnagregar">
                     <i class="fa fa-plus-circle"></i>Agregar
                   </button>
-                  <a target="_blank" href="../reportes/rptarticulos.php">
+                  <!-- <a target="_blank" href="../reportes/rptarticulos.php">
                     <button class="btn btn-info">Reporte</button>
-                  </a>
+                  </a> -->
                 </h1>
                 <div class="box-tools pull-right">
 
@@ -78,12 +78,12 @@ if (!isset($_SESSION['nombre'])) {
                     <label for="">Codigo:</label>
                     <input class="form-control" type="text" name="codigo" id="codigo" placeholder="codigo del prodcuto" required>
 
-                    <button class="btn btn-success" type="button" onclick="generarbarcode()">Generar
+                    <!-- <button class="btn btn-success" type="button" onclick="generarbarcode()">Generar
                     </button>
                     
                     <button class="btn btn-info" type="button" onclick="imprimir()">
                       Imprimir
-                    </button>
+                    </button> -->
                     <div id="print">
                       <svg id="barcode"></svg>
                     </div>

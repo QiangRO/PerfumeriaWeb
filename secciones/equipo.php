@@ -14,7 +14,7 @@
                         <div class="position-relative text-center">
                             <div class="team-text bg-primary text-white">
                                 <h5 class="text-white text-uppercase">María Machaca</h5>
-                                <p class="m-0">Estilista profesional</p>
+                                <!-- <p class="m-0">Estilista profesional</p> -->
                             </div>
                             <div class="team-social bg-dark text-center">
                                 <a class="btn btn-outline-primary btn-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
@@ -31,7 +31,7 @@
                         <div class="position-relative text-center">
                             <div class="team-text bg-primary text-white">
                                 <h5 class="text-white text-uppercase">Ana Lisa Colque</h5>
-                                <p class="m-0">Estilista profesional</p>
+                                <!-- <p class="m-0">Estilista profesional</p> -->
                             </div>
                             <div class="team-social bg-dark text-center">
                                 <a class="btn btn-outline-primary btn-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
@@ -48,7 +48,7 @@
                         <div class="position-relative text-center">
                             <div class="team-text bg-primary text-white">
                                 <h5 class="text-white text-uppercase">Cindy Nero</h5>
-                                <p class="m-0">Estilista profesional</p>
+                                <!-- <p class="m-0">Estilista profesional</p> -->
                             </div>
                             <div class="team-social bg-dark text-center">
                                 <a class="btn btn-outline-primary btn-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
@@ -65,7 +65,7 @@
                         <div class="position-relative text-center">
                             <div class="team-text bg-primary text-white">
                                 <h5 class="text-white text-uppercase">Keko Jones</h5>
-                                <p class="m-0">Estilista profesional</p>
+                                <!-- <p class="m-0">Estilista profesional</p> -->
                             </div>
                             <div class="team-social bg-dark text-center">
                                 <a class="btn btn-outline-primary btn-square mr-2" href="#"><i class="fab fa-twitter"></i></a>

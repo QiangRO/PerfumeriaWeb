@@ -3,7 +3,7 @@
 define("DB_HOST", "localhost:3307");
 
 // nombre de la base de datos
-define("DB_NAME", "dbsistema");
+define("DB_NAME", "dbsistema2");
 
 
 //nombre de usuario de base de datos
@@ -16,6 +16,6 @@ define("DB_PASSWORD", "");
 define("DB_ENCODE", "utf8");
 
 //nombre del proyecto
-define("PRO_NOMBRE", "ITVentas");
+define("PRO_NOMBRE", "Beauty Station");
  
  ?>
