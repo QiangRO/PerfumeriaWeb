@@ -21,8 +21,8 @@ if (strlen(session_id()) < 1)
   <link rel="stylesheet" href="../public/css/AdminLTE.min.css">
   <link rel="stylesheet" href="../public/css/_all-skins.min.css">
   <!-- Morris chart --><!-- Daterange picker -->
-  <link rel="stylesheet" href="img/apple-touch-ico.png">
-  <link rel="stylesheet" href="img/favicon.ico">
+  <!-- <link rel="stylesheet" href="img/apple-touch-ico.png"> -->
+  <!-- <link rel="stylesheet" href="img/favicon.ico"> -->
   <!-- DATATABLES-->
   <link rel="stylesheet" href="../public/datatables/jquery.dataTables.min.css">
   <link rel="stylesheet" href="../public/datatables/buttons.dataTables.min.css">
@@ -79,8 +79,8 @@ if (strlen(session_id()) < 1)
 
             <?php
             if ($_SESSION['acceso'] == 1) {
-              echo '  <!-- <li><a href="usuario.php"><i class="fa fa-circle-o"></i> Usuarios</a></li>
-              <li><a href="permiso.php"><i class="fa fa-circle-o"></i> Permisos</a></li> -->';
+              echo '<li><a href="usuario.php"><i class="fa fa-users"></i> Usuarios</a></li>
+              <li><a href="permiso.php"><i class="fa fa-address-card"></i> Permisos</a></li>';
             }
             ?> 
             <?php

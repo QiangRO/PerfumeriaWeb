@@ -28,14 +28,13 @@ if ($_SESSION['acceso']==1) {
 <div class="panel-body table-responsive" id="listadoregistros">
   <table id="tbllistado" class="table table-striped table-bordered table-condensed table-hover">
     <thead>
-     <th>Nombre</th>
+    <th>Nombre</th>
     </thead>
     <tbody>
     </tbody>
     <tfoot>
-      <th>Nombre</th>
-
-    </tfoot>   
+    <!-- <th>Nombre</th>
+    </tfoot>    -->
   </table>
 </div>
 <!--fin centro-->
@@ -43,7 +42,6 @@ if ($_SESSION['acceso']==1) {
       </div>
       </div>
       <!-- /.box -->
-
     </section>
     <!-- /.content -->
   </div>
