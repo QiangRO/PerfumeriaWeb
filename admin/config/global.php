@@ -1,6 +1,6 @@
 <?php 
 //ip de la pc servidor base de datos
-define("DB_HOST", "localhost:3307");
+define("DB_HOST", "localhost:3308");
 
 // nombre de la base de datos
 define("DB_NAME", "dbsistema2");

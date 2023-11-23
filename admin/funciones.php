@@ -482,7 +482,7 @@ function editar($sentencia, $parametros)
 
 function conectarBaseDatos()
 {
-    $host = "localhost:3307";
+    $host = "localhost:3308";
     $db   = "bd_beauty";
     $user = "root";
     $pass = "";

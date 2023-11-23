@@ -9703,3 +9703,70 @@ h6,
   padding: 0;
   list-style-type: none;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+.chatbox {
+  background-color:#FF69B4; /* Cambia a tu color rosado deseado */
+
+}
+
+input {
+  height: 50px;
+  width: 100%;
+  padding: 0 10px;
+  margin-top: 10px; /* Espacio adicional */
+  border-radius: 5px; /* Ajuste según tus necesidades */
+}
+
+.me {
+  color: white;
+  font-family: cursive;
+  width: 55%;
+  height: auto;
+  padding: 10px;
+  margin: 5px;
+  background-color: pink; /* Cambia a tu tono de rosa oscuro deseado */
+  border-radius: 10px;
+  float: right;
+  text-align: right;
+  display: block;
+}
+
+.alicia {
+  color: white;
+  font-family: cursive;
+  width: 60%;
+  height: auto;
+  padding: 10px;
+  margin: 5px;
+  background-color: pink; /* Cambia a tu tono de rosa deseado */
+  border-radius: 10px;
+  float: left;
+  text-align: left;
+  display: block;
+}
+
+
+
+.imgRedonda {
+  width: 40px;
+  height: 40px;
+  border-radius: 150px;
+}
+
+
+.chatbox {
+  background-color:#FF69B4; 
+
+}

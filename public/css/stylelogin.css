@@ -126,3 +126,6 @@
 .register-wrapper .login-link a {
     color: #777;
 }
+.btn-left {
+    float: left !important;
+}

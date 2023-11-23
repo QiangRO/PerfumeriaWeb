@@ -3,7 +3,7 @@ include_once "encabezado.php";
 include_once "navbar.php";
 include_once "funciones.php";
 session_start();
-if(empty($_SESSION['usuario'])) header("location: login.php");
+if(empty($_SESSION['usuario'])) ;
 
 if(isset($_POST['buscar'])){
     if(empty($_POST['inicio']) || empty($_POST['fin'])) header("location: reporte_ventas.php");
