@@ -18,26 +18,36 @@ $imagen=isset($_POST["imagen"])? limpiarCadena($_POST["imagen"]):"";
 
 switch ($_GET["op"]) {
 	case 'guardaryeditar':
+		try {
+			if (!file_exists($_FILES['imagen']['tmp_name']) || !is_uploaded_file($_FILES['imagen']['tmp_name'])) {
+				$imagen = $_POST["imagenactual"];
+			} else {
+				$ext = explode(".", $_FILES["imagen"]["name"]);
+				if ($_FILES['imagen']['type'] == "image/jpg" || $_FILES['imagen']['type'] == "image/jpeg" || $_FILES['imagen']['type'] == "image/png") {
+					$imagen = round(microtime(true)) . '.' . end($ext);
+					move_uploaded_file($_FILES["imagen"]["tmp_name"], "../files/usuarios/" . $imagen);
+				}
+			}
 
-	if (!file_exists($_FILES['imagen']['tmp_name'])|| !is_uploaded_file($_FILES['imagen']['tmp_name'])) {
-		$imagen=$_POST["imagenactual"];
-	}else{
-		$ext=explode(".", $_FILES["imagen"]["name"]);
-		if ($_FILES['imagen']['type']=="image/jpg" || $_FILES['imagen']['type']=="image/jpeg" || $_FILES['imagen']['type']=="image/png") {
-			$imagen=round(microtime(true)).'.'. end($ext);
-			move_uploaded_file($_FILES["imagen"]["tmp_name"], "../files/usuarios/".$imagen);
+			// Hash SHA256 para la contraseña
+			$clavehash = hash("SHA256", $clave);
+
+			if (empty($idusuario)) {
+				$rspta = $usuario->insertar($nombre, $tipo_documento, $num_documento, $direccion, $telefono, $email, $cargo, $login, $clavehash, $imagen, $_POST['permiso']);
+				echo $rspta ? "Datos registrados correctamente" : "No se pudo registrar todos los datos del usuario";
+			} else {
+				$rspta = $usuario->editar($idusuario, $nombre, $tipo_documento, $num_documento, $direccion, $telefono, $email, $cargo, $login, $clavehash, $imagen, $_POST['permiso']);
+				echo $rspta ? "Datos actualizados correctamente" : "No se pudo actualizar los datos";
+			}
+		} catch (mysqli_sql_exception $e) {
+			if ($e->getCode() == 1062) {
+				// Código 1062 corresponde a una violación de restricción UNIQUE
+				echo "Error: El nombre de usuario (LOGIN) ya existe. Por favor, elige otro nombre de usuario.";
+			} else {
+				// Manejar otros tipos de errores según sea necesario
+				echo "Error: " . $e->getMessage();
+			}
 		}
-	}
-
-	//Hash SHA256 para la contraseña
-	$clavehash=hash("SHA256", $clave);
-	if (empty($idusuario)) {
-		$rspta=$usuario->insertar($nombre,$tipo_documento,$num_documento,$direccion,$telefono,$email,$cargo,$login,$clavehash,$imagen,$_POST['permiso']);
-		echo $rspta ? "Datos registrados correctamente" : "No se pudo registrar todos los datos del usuario";
-	}else{
-		$rspta=$usuario->editar($idusuario,$nombre,$tipo_documento,$num_documento,$direccion,$telefono,$email,$cargo,$login,$clavehash,$imagen,$_POST['permiso']);
-		echo $rspta ? "Datos actualizados correctamente" : "No se pudo actualizar los datos";
-	}
 	break;
 	
 

@@ -9,13 +9,23 @@ $descripcion=isset($_POST["descripcion"])? limpiarCadena($_POST["descripcion"]):
 
 switch ($_GET["op"]) {
 	case 'guardaryeditar':
-	if (empty($idcategoria)) {
-		$rspta=$categoria->insertar($nombre,$descripcion);
-		echo $rspta ? "Datos registrados correctamente" : "No se pudo registrar los datos";
-	}else{
-         $rspta=$categoria->editar($idcategoria,$nombre,$descripcion);
-		echo $rspta ? "Datos actualizados correctamente" : "No se pudo actualizar los datos";
-	}
+		try {
+			if (empty($idcategoria)) {
+				$rspta = $categoria->insertar($nombre, $descripcion);
+				echo $rspta ? "Datos registrados correctamente" : "No se pudo registrar los datos";
+			} else {
+				$rspta = $categoria->editar($idcategoria, $nombre, $descripcion);
+				echo $rspta ? "Datos actualizados correctamente" : "No se pudo actualizar los datos";
+			}
+		} catch (mysqli_sql_exception $e) {
+			if ($e->getCode() == 1062) {
+				// Código 1062 corresponde a una violación de restricción UNIQUE
+				echo "Error: El nombre de categoría ya existe. Por favor, elige otro nombre de categoría.";
+			} else {
+				// Manejar otros tipos de errores según sea necesario
+				echo "Error: " . $e->getMessage();
+			}
+		}
 		break;
 	
 

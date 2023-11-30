@@ -14,13 +14,23 @@ $email=isset($_POST["email"])? limpiarCadena($_POST["email"]):"";
 
 switch ($_GET["op"]) {
 	case 'guardaryeditar':
-	if (empty($idpersona)) {
-		$rspta=$persona->insertar($tipo_persona,$nombre,$tipo_documento,$num_documento,$direccion,$telefono,$email);
-		echo $rspta ? "Datos registrados correctamente" : "No se pudo registrar los datos";
-	}else{
-         $rspta=$persona->editar($idpersona,$tipo_persona,$nombre,$tipo_documento,$num_documento,$direccion,$telefono,$email);
-		echo $rspta ? "Datos actualizados correctamente" : "No se pudo actualizar los datos";
-	}
+		try {
+            if (empty($idpersona)) {
+                $rspta = $persona->insertar($tipo_persona, $nombre, $tipo_documento, $num_documento, $direccion, $telefono, $email);
+                echo $rspta ? "Datos registrados correctamente" : "No se pudo registrar los datos";
+            } else {
+                $rspta = $persona->editar($idpersona, $tipo_persona, $nombre, $tipo_documento, $num_documento, $direccion, $telefono, $email);
+                echo $rspta ? "Datos actualizados correctamente" : "No se pudo actualizar los datos";
+            }
+        } catch (mysqli_sql_exception $e) {
+            if ($e->getCode() == 1062) {
+                // Código 1062 corresponde a una violación de restricción UNIQUE
+                echo "Error: La persona ya existe. Por favor, ingresa un nombre diferente.";
+            } else {
+                // Manejar otros tipos de errores según sea necesario
+                echo "Error: " . $e->getMessage();
+            }
+        }
 		break;
 	
 

@@ -13,23 +13,33 @@ $imagen = isset($_POST["imagen"]) ? limpiarCadena($_POST["imagen"]) : "";
 
 switch ($_GET["op"]) {
 	case 'guardaryeditar':
+		try {
+            if (!file_exists($_FILES['imagen']['tmp_name']) || !is_uploaded_file($_FILES['imagen']['tmp_name'])) {
+                $imagen = $_POST["imagenactual"];
+            } else {
+                $ext = explode(".", $_FILES["imagen"]["name"]);
+                if ($_FILES['imagen']['type'] == "image/jpg" || $_FILES['imagen']['type'] == "image/jpeg" || $_FILES['imagen']['type'] == "image/png") {
+                    $imagen = round(microtime(true)) . '.' . end($ext);
+                    move_uploaded_file($_FILES["imagen"]["tmp_name"], "../files/articulos/" . $imagen);
+                }
+            }
 
-		if (!file_exists($_FILES['imagen']['tmp_name']) || !is_uploaded_file($_FILES['imagen']['tmp_name'])) {
-			$imagen = $_POST["imagenactual"];
-		} else {
-			$ext = explode(".", $_FILES["imagen"]["name"]);
-			if ($_FILES['imagen']['type'] == "image/jpg" || $_FILES['imagen']['type'] == "image/jpeg" || $_FILES['imagen']['type'] == "image/png") {
-				$imagen = round(microtime(true)) . '.' . end($ext);
-				move_uploaded_file($_FILES["imagen"]["tmp_name"], "../files/articulos/" . $imagen);
-			}
-		}
-		if (empty($idarticulo)) {
-			$rspta = $articulo->insertar($idcategoria, $codigo, $nombre, $stock, $descripcion, $imagen);
-			echo $rspta ? "Datos registrados correctamente" : "No se pudo registrar los datos";
-		} else {
-			$rspta = $articulo->editar($idarticulo, $idcategoria, $codigo, $nombre, $stock, $descripcion, $imagen);
-			echo $rspta ? "Datos actualizados correctamente" : "No se pudo actualizar los datos";
-		}
+            if (empty($idarticulo)) {
+                $rspta = $articulo->insertar($idcategoria, $codigo, $nombre, $stock, $descripcion, $imagen);
+                echo $rspta ? "Datos registrados correctamente" : "No se pudo registrar los datos";
+            } else {
+                $rspta = $articulo->editar($idarticulo, $idcategoria, $codigo, $nombre, $stock, $descripcion, $imagen);
+                echo $rspta ? "Datos actualizados correctamente" : "No se pudo actualizar los datos";
+            }
+        } catch (mysqli_sql_exception $e) {
+            if ($e->getCode() == 1062) {
+                // Código 1062 corresponde a una violación de restricción UNIQUE
+                echo "Error: El producto ya existe. Por favor registra un producto no existente.";
+            } else {
+                // Manejar otros tipos de errores según sea necesario
+                echo "Error: " . $e->getMessage();
+            }
+        }
 		break;
 
 
