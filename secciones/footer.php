@@ -399,8 +399,12 @@ const kekoJonesBtn = document.getElementById("kekoJonesBtn");
 "duda": "¿Tienes alguna duda? No te preocupes, estamos aquí para ayudarte. Puedes ponerte en contacto con nuestro equipo a través de mensajes directos y seleccionar ATENCION AL CLIENTE. para consultas generales o 'EXPERTO EN FRAGANCIAS'' si necesitas asesoramiento específico sobre fragancias.",
 "no entiendo": "Entendemos que a veces las cosas pueden ser confusas. Si tienes dudas, ¡estamos aquí para ayudarte! Comunícate con nuestro equipo de ATENCION AL CLIENTE para consultas generales o con nuestro EXPERTO EN FRAGANCIAS' si necesitas ayuda con las fragancias en particular.",
 
-  "comprar": "¡Genial que estés interesado en comprar! Para hacer una compra, puedes ponerte en contacto con nuestro equipo de ATENCION AL CLIENTE. Ellos estarán encantados de ayudarte con el proceso de compra y responder a cualquier pregunta que puedas tener. Además, si necesitas asesoramiento sobre fragancias, no dudes en comunicarte con nuestro EXPERTO EN FRAGANCIAS'. Está aquí para garantizar que elijas la fragancia perfecta para ti. ¡Esperamos que encuentres la experiencia de compra y la fragancia ideales!",
-  "compra": "¡Genial que estés interesado en comprar! Para hacer una compra, puedes ponerte en contacto con nuestro equipo de ATENCION AL CLIENTE. Ellos estarán encantados de ayudarte con el proceso de compra y responder a cualquier pregunta que puedas tener. Además, si necesitas asesoramiento sobre fragancias, no dudes en comunicarte con nuestro EXPERTO EN FRAGANCIAS'. Está aquí para garantizar que elijas la fragancia perfecta para ti. ¡Esperamos que encuentres la experiencia de compra y la fragancia ideales!",
+
+"comprar": "¡Genial que estés interesado en comprar! Para realizar una compra, puedes utilizar nuestro carrito de compras con opción de pago por PayPal. Si prefieres asistencia personalizada, también puedes comunicarte con nuestro equipo de ATENCIÓN AL CLIENTE. Ellos estarán encantados de ayudarte en el proceso de compra y, si lo deseas, te enviarán el QR directamente. Nuestro EXPERTO EN FRAGANCIAS también está disponible para asesorarte y garantizar que elijas la fragancia perfecta. ¡Esperamos que encuentres la experiencia de compra y la fragancia ideales!",
+"compra": "¡Genial que estés interesado en comprar! Puedes optar por utilizar nuestro carrito de compras con opción de pago por PayPal. Si prefieres asistencia personalizada, también puedes comunicarte directamente con nuestro equipo de ATENCIÓN AL CLIENTE. Ellos estarán encantados de ayudarte en el proceso de compra y, si lo deseas, te enviarán el QR directamente. Nuestro EXPERTO EN FRAGANCIAS también está disponible para asesorarte y garantizar que elijas la fragancia perfecta. ¡Esperamos que encuentres la experiencia de compra y la fragancia ideales!",
+
+
+
 
   "adios": "¡Gracias por visitar Beauty Station! Esperamos que encuentres la fragancia perfecta para ti. Si tienes más preguntas en el futuro, no dudes en volver. ¡Hasta pronto y que tengas un día maravilloso!",
   "gracias": "¡De nada! Estoy aquí para ayudarte. Si tienes más preguntas o necesitas asistencia en el futuro, no dudes en preguntar. ¡Que tengas un excelente día!",
@@ -440,6 +444,11 @@ const kekoJonesBtn = document.getElementById("kekoJonesBtn");
 
 
     "productos ": `Actualmente, contamos con los siguientes productos: Polo Blue, Wour Poure Homme, Uomo, Polo Black, A* Men Recarga.`,
+    "perfume": `Actualmente, contamos con los siguientes productos: Polo Blue, Wour Poure Homme, Uomo, Polo Black, A* Men Recarga.`,
+    "perfumes ": `Actualmente, contamos con los siguientes productos: Polo Blue, Wour Poure Homme, Uomo, Polo Black, A* Men Recarga.`,
+    
+
+
     "listame": `Los productos disponibles son: Polo Blue, Wour Poure Homme, Uomo, Polo Black, A* Men Recarga.`,
     "cuales son tus ": `Nuestros productos disponibles son: Polo Blue, Wour Poure Homme, Uomo, Polo Black, A* Men Recarga.`,
     "muestrame los perfumes que tienes": `Los perfumes disponibles son: Polo Blue, Wour Poure Homme, Uomo, Polo Black, A* Men Recarga.`,
