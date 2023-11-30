@@ -216,21 +216,23 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   const botResponses = {
-    // ... (resto del código)
-  "beauty station?": "Beauty Station es tu destino de confianza para encontrar las mejores fragancias. Nos dedicamos a ofrecer productos de calidad para que te sientas y huelas increíble.",
+  // ... (resto del código)
+  "beauty": "Beauty Station es tu destino de confianza para encontrar las mejores fragancias. Nos dedicamos a ofrecer productos de calidad para que te sientas y huelas increíble.",
   "horario": "Nuestro horario de atención es de lunes a viernes de 9:00 a.m. a 7:00 p.m. y los sábados de 10:00 a.m. a 4:00 p.m.",
   "horarios": "Nuestro horario de atención es de lunes a viernes de 9:00 a.m. a 7:00 p.m. y los sábados de 10:00 a.m. a 4:00 p.m.",
   " ubicados": "Nos encontramos en Avenida 6 de agosto. ¡Te invitamos a visitarnos!",
+  " ubican": "Nos encontramos en Avenida 6 de agosto. ¡Te invitamos a visitarnos!",
   "ubicacion": "Nos encontramos en Avenida 6 de agosto. ¡Te invitamos a visitarnos!",
   "hola": "¡Hola! Bienvenido a Beauty Station. ¿En qué puedo ayudarte hoy? Si tienes preguntas sobre nuestros productos, nuestro horario o nuestra ubicación, estoy aquí para ayudarte. También puedo proporcionarte información sobre los stocks de nuestros productos.",
   "que tal": "¡Hola! Bienvenido a Beauty Station. ¿En qué puedo ayudarte hoy? Si tienes preguntas sobre nuestros productos, nuestro horario o nuestra ubicación, estoy aquí para ayudarte. También puedo proporcionarte información sobre los stocks de nuestros productos.",
   "stock": `Nuestros productos disponibles actualmente son: Polo Blue (${productos["polo blue"].stock} unidades), Wour Poure Homme (${productos["wour poure homme"].stock} unidades), Uomo (${productos["uomo"].stock} unidades), Polo Black (${productos["polo black"].stock} unidades) y A* Men Recarga (${productos["a* men recarga"].stock} unidades). ¿Hay algo en particular que te interese?`,
-"precio": "Para proporcionarte el precio, por favor especifica el nombre del perfume. Por ejemplo, '¿Cuál es el precio de Polo Blue?'.",
+"precios": "Para proporcionarte el precio, por favor especifica el nombre del perfume. Por ejemplo, '¿Cuál es el precio de Polo Blue?'.",
+"adios": "Hasta pronto ",
     // Respuestas específicas para cada perfume
     "descripcion en polo blue": `Polo Blue: ${productos["polo blue"].descripcion}. Precio: ${productos["polo blue"].precio} Bs. Stock disponible: ${productos["polo blue"].stock} unidades.`,
     "descripcion de polo blue": `Polo Blue: ${productos["polo blue"].descripcion}. Precio: ${productos["polo blue"].precio} Bs. Stock disponible: ${productos["polo blue"].stock} unidades.`,
     "precio en polo blue": `Polo Blue: ${productos["polo blue"].precio} Bs.`,
-    "precio de polo blue": `Polo Blue: ${productos["polo blue"].precio} Bs.`,
+   
     "descripcion en wour poure homme": `Wour Poure Homme: ${productos["wour poure homme"].descripcion}. Precio: ${productos["wour poure homme"].precio} Bs. Stock disponible: ${productos["wour poure homme"].stock} unidades.`,
     "descripcion de wour poure homme": `Wour Poure Homme: ${productos["wour poure homme"].descripcion}. Precio: ${productos["wour poure homme"].precio} Bs. Stock disponible: ${productos["wour poure homme"].stock} unidades.`,
     "precio en wour poure homme": `Wour Poure Homme: ${productos["wour poure homme"].precio} Bs.`,
@@ -250,12 +252,12 @@ document.addEventListener("DOMContentLoaded", function () {
     "precio tiene polo blue": `Polo Blue: ${productos["polo blue"].precio} Bs.`,
     "precio de polo blue": `Polo Blue: ${productos["polo blue"].precio} Bs.`,
     "precio en polo blue": `Polo Blue: ${productos["polo blue"].precio} Bs.`,
-    "precio de polo blue": `Polo Blue: ${productos["polo blue"].precio} Bs.`,
+    
     "precio tiene wour poure homme": `Wour Poure Homme: ${productos["wour poure homme"].precio} Bs.`,
     "precio de wour poure homme": `Wour Poure Homme: ${productos["wour poure homme"].precio} Bs.`,
 
 
-    "que productos tienes": `Actualmente, contamos con los siguientes productos: Polo Blue, Wour Poure Homme, Uomo, Polo Black, A* Men Recarga.`,
+    "productos ": `Actualmente, contamos con los siguientes productos: Polo Blue, Wour Poure Homme, Uomo, Polo Black, A* Men Recarga.`,
     "listame": `Los productos disponibles son: Polo Blue, Wour Poure Homme, Uomo, Polo Black, A* Men Recarga.`,
     "cuales son tus ": `Nuestros productos disponibles son: Polo Blue, Wour Poure Homme, Uomo, Polo Black, A* Men Recarga.`,
     "muestrame los perfumes que tienes": `Los perfumes disponibles son: Polo Blue, Wour Poure Homme, Uomo, Polo Black, A* Men Recarga.`,
@@ -278,7 +280,7 @@ document.addEventListener("DOMContentLoaded", function () {
   "dime la descripción de a* men recarga": `A* Men Recarga es una exótica fragancia floral con toques cítricos que te lleva a un jardín primaveral vibrante y encantador. Precio: ${productos["a* men recarga"].precio} Bs. Stock disponible: ${productos["a* men recarga"].stock} unidades.`,
    
   
-  // ... (resto del código)
+  
   };
 
   // Busca coincidencias parciales en el mensaje del usuario
