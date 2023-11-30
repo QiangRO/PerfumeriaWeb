@@ -59,7 +59,6 @@ if (!isset($_SESSION['nombre'])) {
                     <label for="">Tipo Dcumento</label>
                     <select class="form-control select-picker" name="tipo_documento" id="tipo_documento" required>
                       <option value="CI">CI</option>
-                      <option value="RUC">RUC</option>
                       <option value="NIT">NIT</option>
                       <!-- <option value="CEDULA">CEDULA</option> -->
                     </select>
