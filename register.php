@@ -24,20 +24,31 @@ include_once 'secciones/navegacion.php';
                 <div class="register-wrapper bg-white p-4 mt-5">
                     <form action="function/authcode.php" method="POST">
                         <div class="form-group">
-                            <label for="name">Nombre:</label>
-                            <input type="text" name="name" class="form-control" placeholder="Ingrese su nombre" required>
+                            <label for="">Nombre:</label>
+                            <input class="form-control" type="text" name="nombre" id="nombre" maxlength="100" placeholder="Nombre del cliente" required>
                         </div>
                         <div class="form-group">
-                            <label for="email">Correo electrónico:</label>
-                            <input type="email" name="email" class="form-control" placeholder="Ingrese su correo electrónico" required>
+                        <label for="">Tipo Documento</label>
+                            <select class="form-control select-picker" name="tipo_documento" id="tipo_documento" required>
+                                <option value="CI">CI</option>
+                                <option value="NIT">NIT</option>
+                            </select>
                         </div>
                         <div class="form-group">
-                            <label for="phone">Telefono:</label>
-                            <input type="number" name="phone" class="form-control" placeholder="Ingrese su telefono" required>
+                            <label for="">Número Documento</label>
+                            <input class="form-control" type="text" name="num_documento" id="num_documento" maxlength="20" placeholder="Número de Documento">
                         </div>
                         <div class="form-group">
-                            <label for="address">Direccion:</label>
-                            <input type="text" name="address" class="form-control" placeholder="Ingrese su direccion" required>
+                            <label for="">Direccion</label>
+                            <input class="form-control" type="text" name="direccion" id="direccion" maxlength="70" placeholder="Direccion">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Telefono</label>
+                            <input class="form-control" type="text" name="telefono" id="telefono" maxlength="20" placeholder="Número de Telefono">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Email</label>
+                            <input class="form-control" type="email" name="email" id="email" maxlength="50" placeholder="Email">
                         </div>
                         <div class="form-group">
                             <label for="password">Contraseña:</label>
@@ -47,7 +58,8 @@ include_once 'secciones/navegacion.php';
                             <label>Confirmar contraseña:</label>
                             <input type="password" name="cpassword" class="form-control" placeholder="Confirme su contraseña" required>
                         </div>
-                        <button type="submit" name="register_btn" class="btn btn-primary btn-block">Submit</button>
+                        <button type="submit" id="btnGuardar" class="btn btn-primary btn-block"><i class="fa fa-save"></i> Guardar</button>
+
                     </form>
                     <div class="text-center mt-3">
                         <p>¿Ya tiene una cuenta? <a href="login.php" class="text-secondary">Iniciar sesión</a></p>
