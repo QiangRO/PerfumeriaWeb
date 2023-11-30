@@ -141,6 +141,8 @@ input {
 }
 
 
+/* Agrega márgenes a los botones con la clase 'chat-btn' */
+
 
 .imgRedonda {
     width: 40px;
@@ -150,7 +152,7 @@ input {
         </style>
         <div class="chatbox">
           <div class="header">
-            <h4> <img src='img/perfil.jpg' class='imgRedonda'/> CHATBOT </h4>
+            <h4> <img src='public/images/admin/header.png' class='imgRedonda'/> CHATBOT </h4>
           </div>
           <div class="body" id="chatBody">
             
@@ -177,12 +179,124 @@ document.addEventListener("DOMContentLoaded", function () {
   const btnSend = document.getElementById("btnSend");
   const chatBody = document.getElementById("chatBody");
 
+
   // Agrega el mensaje inicial del bot al abrir el chat
   const showChatModal = () => {
-    clearChat();
-    showMessage("Hola! Soy ChatBot. Estoy aquí para responder preguntas. ¿En qué puedo ayudarte?");
-    chatModal.show();
+  clearChat();
+  const messageText = "¡Hola! Soy ChatBot. Estoy aquí para responder preguntas. ¿Cómo puedo ayudarte hoy? <h1>ELIGE UNA OPCION</h1>: <button id='contactoBtn' style='background-color: #D2B48C; font-weight: bold;'>ATENCIÓN AL CLIENTE</button><br><br> <button id='fraganciasBtn' style='background-color: #D2B48C; font-weight: bold;'>EXPERTO EN FRAGANCIAS</button><br><br> <button id='promocionesBtn' style='background-color: #D2B48C; font-weight: bold;'>PROMOCIONES Y DESCUENTOS</button><br><br> <button id='kekoJonesBtn' style='background-color: #D2B48C; font-weight: bold;'>ATENCIÓN AL CLIENTE 2</button>";
+
+  showMessage(messageText, true);
+
+  // Añadir evento click al botón de ATENCION AL CLIENTE
+  const contactoBtn = document.getElementById("contactoBtn");
+  contactoBtn.addEventListener("click", () => {
+    const msg = {
+      quick_replies: [
+        {
+          content_type: "text",
+          title: "Contactar a María",
+          payload: "CONTACTAR_MARIA",
+          image_url: "https://wa.link/smiwsv"
+        }
+      ]
+    };
+
+    // Lógica para manejar la respuesta y generar el enlace
+    if (msg.quick_replies && msg.quick_replies.length > 0) {
+      const link = document.createElement("a");
+      link.href = msg.quick_replies[0].image_url;
+      link.textContent = "PRESIONA AQUI";
+      link.target = "_blank"; // Abre el enlace en una nueva pestaña
+      link.style.color = "blue"; // Cambia el color del enlace a azul
+
+      // Muestra el enlace en el chat
+      showMessage({ text: `¡Claro! Puedes ponerte en contacto con María Machaca  ${link.outerHTML} Para Atencion Al Cliente` });
+    }
+  });
+
+  // Añadir evento click al botón de Experta en Fragancias (ANA LISA COLQUE)
+  const fraganciasBtn = document.getElementById("fraganciasBtn");
+  fraganciasBtn.addEventListener("click", () => {
+    const msg = {
+      quick_replies: [
+        {
+          content_type: "text",
+          title: "Contactar a Ana Lisa Colque",
+          payload: "CONTACTAR_ANA_LISA",
+          image_url: "https://wa.link/smiwsv"
+        }
+      ]
+    };
+
+    // Lógica para manejar la respuesta y generar el enlace
+    if (msg.quick_replies && msg.quick_replies.length > 0) {
+      const link = document.createElement("a");
+      link.href = msg.quick_replies[0].image_url;
+      link.textContent = "PRESIONA AQUI";
+      link.target = "_blank"; // Abre el enlace en una nueva pestaña
+      link.style.color = "blue"; // Cambia el color del enlace a azul
+
+      // Muestra el enlace en el chat
+      showMessage({ text: `¡Claro! Puedes ponerte en contacto con Ana Lisa Colque  ${link.outerHTML} Para Experta En Fragancias` });
+    }
+
+
+    
+  });
+    // Añadir evento click al botón de Promociones y Descuentos (CINDY NERO)
+    const promocionesBtn = document.getElementById("promocionesBtn");
+promocionesBtn.addEventListener("click", () => {
+  const msg = {
+    quick_replies: [
+      {
+        content_type: "text",
+        title: "Promociones y Descuentos",
+        payload: "PROMOCIONES_DESCUENTOS",
+        image_url: "https://wa.link/smiwsv"
+      }
+    ]
   };
+
+  // Lógica para manejar la respuesta y generar el enlace
+  if (msg.quick_replies && msg.quick_replies.length > 0) {
+    const link = document.createElement("a");
+    link.href = msg.quick_replies[0].image_url;
+    link.textContent = "PRESIONA AQUI";
+    link.target = "_blank"; // Abre el enlace en una nueva pestaña
+    link.style.color = "blue"; // Cambia el color del enlace a azul
+
+    // Muestra el enlace en el chat
+    showMessage({ text: `¡Claro! Puedes ponerte en contacto con CINDY NERO ${link.outerHTML} Para Promociones Y Descuentos` });
+  }
+});
+const kekoJonesBtn = document.getElementById("kekoJonesBtn");
+    kekoJonesBtn.addEventListener("click", () => {
+      const msg = {
+        quick_replies: [
+          {
+            content_type: "text",
+            title: "Contactar a Keko Jones",
+            payload: "CONTACTAR_KEKO_JONES",
+            image_url: "https://wa.link/smiwsv"
+          }
+        ]
+      };
+
+      // Lógica para manejar la respuesta y generar el enlace
+      if (msg.quick_replies && msg.quick_replies.length > 0) {
+        const link = document.createElement("a");
+        link.href = msg.quick_replies[0].image_url;
+        link.textContent = "PRESIONA AQUI";
+        link.target = "_blank"; // Abre el enlace en una nueva pestaña
+        link.style.color = "blue"; // Cambia el color del enlace a azul
+
+        // Muestra el enlace en el chat
+        showMessage({ text: `¡Claro! Puedes ponerte en contacto con Keko Jones ${link.outerHTML} Para Atencion Al Cliente` });
+      }
+    });
+  chatModal.show();
+};
+
 
   const closeChatModal = () => {
     clearChat();
@@ -190,21 +304,74 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   const showMessage = (msg, isUser = false) => {
-    const div = document.createElement("div");
-    const className = isUser ? "me" : "alicia";
-    div.className = `${className} visible`;
+  const div = document.createElement("div");
+  const className = isUser ? "me" : "alicia";
+  div.className = `${className} visible`;
 
-    // Agrega indicador de usuario o bot al mensaje
-    const indicator = isUser ? "TU:" : "BOTH:";
-      // Aplica estilos adicionales para mensajes del bot
-  if (!isUser) {
-    div.innerHTML = `<strong>${indicator} ${msg}</strong>`;
+  // Verifica si la respuesta tiene enlaces
+  if (msg.quick_replies && msg.quick_replies.length > 0) {
+    const link = document.createElement("a");
+    link.href = msg.quick_replies[0].image_url;
+    link.textContent = "PRESIONA AQUI";
+    link.target = "_blank"; // Abre el enlace en una nueva pestaña
+    link.style.color = "blue"; // Cambia el color del enlace a azul
+
+    // Crea un contenedor para el texto y el enlace
+    const container = document.createElement("div");
+    container.innerHTML = `<strong>${msg.text}</strong> `;
+    container.appendChild(link);
+    
+    div.appendChild(container);
   } else {
-    div.textContent = `${indicator} ${msg}`;
+    // No hay enlaces, muestra el texto normalmente
+    const indicator = isUser ? "TU:" : "BOT:";
+
+    // Modificado para manejar objetos como respuestas
+    const responseText = msg.text || msg;
+
+    div.innerHTML = `<strong>${indicator} ${responseText}</strong>`;
   }
 
-    chatBody.appendChild(div);
-  };
+  chatBody.appendChild(div);
+  
+  // Utiliza scrollIntoView para desplazar automáticamente hacia abajo
+  div.scrollIntoView();
+};
+
+  // Añade este bloque para manejar el clic en "ATENCION AL CLIENTE"
+  document.addEventListener("click", function (e) {
+    if (e.target.id === "contactarBtn") {
+      const msg = {
+        quick_replies: [
+          {
+            content_type: "text",
+            title: "Contactar a María",
+            payload: "CONTACTAR_MARIA",
+            image_url: "https://wa.link/smiwsv"
+          }
+        ]
+      };
+
+      // Lógica para manejar la respuesta y generar el enlace
+      if (msg.quick_replies && msg.quick_replies.length > 0) {
+        const link = document.createElement("a");
+        link.href = msg.quick_replies[0].image_url;
+        link.textContent = "PRESIONA AQUI";
+        link.target = "_blank"; // Abre el enlace en una nueva pestaña
+        link.style.color = "blue"; // Cambia el color del enlace a azul
+
+        // Muestra el enlace en el chat
+        showMessage({ text: link.outerHTML });
+      }
+
+      
+    }
+  });
+
+  // Resto de tu código...
+
+
+
 
   const getBotResponse = (userMessage) => {
   const productos = {
@@ -216,46 +383,63 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   const botResponses = {
-    // ... (resto del código)
-  "beauty station?": "Beauty Station es tu destino de confianza para encontrar las mejores fragancias. Nos dedicamos a ofrecer productos de calidad para que te sientas y huelas increíble.",
+  
+  // ... (resto del código)
+  "beauty": "Beauty Station es tu destino de confianza para encontrar las mejores fragancias. Nos dedicamos a ofrecer productos de calidad para que te sientas y huelas increíble.",
   "horario": "Nuestro horario de atención es de lunes a viernes de 9:00 a.m. a 7:00 p.m. y los sábados de 10:00 a.m. a 4:00 p.m.",
   "horarios": "Nuestro horario de atención es de lunes a viernes de 9:00 a.m. a 7:00 p.m. y los sábados de 10:00 a.m. a 4:00 p.m.",
   " ubicados": "Nos encontramos en Avenida 6 de agosto. ¡Te invitamos a visitarnos!",
+  " ubican": "Nos encontramos en Avenida 6 de agosto. ¡Te invitamos a visitarnos!",
   "ubicacion": "Nos encontramos en Avenida 6 de agosto. ¡Te invitamos a visitarnos!",
   "hola": "¡Hola! Bienvenido a Beauty Station. ¿En qué puedo ayudarte hoy? Si tienes preguntas sobre nuestros productos, nuestro horario o nuestra ubicación, estoy aquí para ayudarte. También puedo proporcionarte información sobre los stocks de nuestros productos.",
   "que tal": "¡Hola! Bienvenido a Beauty Station. ¿En qué puedo ayudarte hoy? Si tienes preguntas sobre nuestros productos, nuestro horario o nuestra ubicación, estoy aquí para ayudarte. También puedo proporcionarte información sobre los stocks de nuestros productos.",
   "stock": `Nuestros productos disponibles actualmente son: Polo Blue (${productos["polo blue"].stock} unidades), Wour Poure Homme (${productos["wour poure homme"].stock} unidades), Uomo (${productos["uomo"].stock} unidades), Polo Black (${productos["polo black"].stock} unidades) y A* Men Recarga (${productos["a* men recarga"].stock} unidades). ¿Hay algo en particular que te interese?`,
-"precio": "Para proporcionarte el precio, por favor especifica el nombre del perfume. Por ejemplo, '¿Cuál es el precio de Polo Blue?'.",
+  "precios": "Para proporcionarte el precio, por favor especifica el nombre del perfume.",
+  "dudas": "Si tienes alguna duda, no dudes en comunicarte con nuestro equipo a través de mensajes directos. Puedes seleccionar la opción ATENCION AL CLIENTE. para consultas generales o, si tienes dudas específicas sobre fragancias, elige 'EXPERTO EN FRAGANCIAS'. Estamos aquí para ayudarte en lo que necesites.",
+"duda": "¿Tienes alguna duda? No te preocupes, estamos aquí para ayudarte. Puedes ponerte en contacto con nuestro equipo a través de mensajes directos y seleccionar ATENCION AL CLIENTE. para consultas generales o 'EXPERTO EN FRAGANCIAS'' si necesitas asesoramiento específico sobre fragancias.",
+"no entiendo": "Entendemos que a veces las cosas pueden ser confusas. Si tienes dudas, ¡estamos aquí para ayudarte! Comunícate con nuestro equipo de ATENCION AL CLIENTE para consultas generales o con nuestro EXPERTO EN FRAGANCIAS' si necesitas ayuda con las fragancias en particular.",
+
+  "comprar": "¡Genial que estés interesado en comprar! Para hacer una compra, puedes ponerte en contacto con nuestro equipo de ATENCION AL CLIENTE. Ellos estarán encantados de ayudarte con el proceso de compra y responder a cualquier pregunta que puedas tener. Además, si necesitas asesoramiento sobre fragancias, no dudes en comunicarte con nuestro EXPERTO EN FRAGANCIAS'. Está aquí para garantizar que elijas la fragancia perfecta para ti. ¡Esperamos que encuentres la experiencia de compra y la fragancia ideales!",
+  "compra": "¡Genial que estés interesado en comprar! Para hacer una compra, puedes ponerte en contacto con nuestro equipo de ATENCION AL CLIENTE. Ellos estarán encantados de ayudarte con el proceso de compra y responder a cualquier pregunta que puedas tener. Además, si necesitas asesoramiento sobre fragancias, no dudes en comunicarte con nuestro EXPERTO EN FRAGANCIAS'. Está aquí para garantizar que elijas la fragancia perfecta para ti. ¡Esperamos que encuentres la experiencia de compra y la fragancia ideales!",
+
+  "adios": "¡Gracias por visitar Beauty Station! Esperamos que encuentres la fragancia perfecta para ti. Si tienes más preguntas en el futuro, no dudes en volver. ¡Hasta pronto y que tengas un día maravilloso!",
+  "gracias": "¡De nada! Estoy aquí para ayudarte. Si tienes más preguntas o necesitas asistencia en el futuro, no dudes en preguntar. ¡Que tengas un excelente día!",
+
+
     // Respuestas específicas para cada perfume
     "descripcion en polo blue": `Polo Blue: ${productos["polo blue"].descripcion}. Precio: ${productos["polo blue"].precio} Bs. Stock disponible: ${productos["polo blue"].stock} unidades.`,
     "descripcion de polo blue": `Polo Blue: ${productos["polo blue"].descripcion}. Precio: ${productos["polo blue"].precio} Bs. Stock disponible: ${productos["polo blue"].stock} unidades.`,
     "precio en polo blue": `Polo Blue: ${productos["polo blue"].precio} Bs.`,
-    "precio de polo blue": `Polo Blue: ${productos["polo blue"].precio} Bs.`,
+   
     "descripcion en wour poure homme": `Wour Poure Homme: ${productos["wour poure homme"].descripcion}. Precio: ${productos["wour poure homme"].precio} Bs. Stock disponible: ${productos["wour poure homme"].stock} unidades.`,
     "descripcion de wour poure homme": `Wour Poure Homme: ${productos["wour poure homme"].descripcion}. Precio: ${productos["wour poure homme"].precio} Bs. Stock disponible: ${productos["wour poure homme"].stock} unidades.`,
     "precio en wour poure homme": `Wour Poure Homme: ${productos["wour poure homme"].precio} Bs.`,
     "precio de wour poure homme": `Wour Poure Homme: ${productos["wour poure homme"].precio} Bs.`,
+    "esta wour poure homme": `Wour Poure Homme: ${productos["wour poure homme"].precio} Bs.`,
     "descripcion en uomo": `Uomo: ${productos["uomo"].descripcion}. Precio: ${productos["uomo"].precio} Bs. Stock disponible: ${productos["uomo"].stock} unidades.`,
     "descripcion de uomo": `Uomo: ${productos["uomo"].descripcion}. Precio: ${productos["uomo"].precio} Bs. Stock disponible: ${productos["uomo"].stock} unidades.`,
     "precio en uomo": `Uomo: ${productos["uomo"].precio} Bs.`,
-    "precio de uomo": `Uomo: ${productos["uomo"].precio} Bs.`,
-    "descripcion en polo black": `Polo Black: ${productos["polo black"].descripcion}. Precio: ${productos["polo black"].precio} Bs. Stock disponible: ${productos["polo black"].stock} unidades.`,
-    "descripcion de polo black": `Polo Black: ${productos["polo black"].descripcion}. Precio: ${productos["polo black"].precio} Bs. Stock disponible: ${productos["polo black"].stock} unidades.`,
+    "de uomo": `Uomo: ${productos["uomo"].precio} Bs.`,
+    "esta uomo": `Uomo: ${productos["uomo"].precio} Bs.`,
+    "polo black": `Polo Black: ${productos["polo black"].descripcion}. Precio: ${productos["polo black"].precio} Bs. Stock disponible: ${productos["polo black"].stock} unidades.`,
+    "polo black": `Polo Black: ${productos["polo black"].descripcion}. Precio: ${productos["polo black"].precio} Bs. Stock disponible: ${productos["polo black"].stock} unidades.`,
     "precio en polo black": `Polo Black: ${productos["polo black"].precio} Bs.`,
     "precio de polo black": `Polo Black: ${productos["polo black"].precio} Bs.`,
-    "descripcion en a men recarga": `A* Men Recarga: ${productos["a* men recarga"].descripcion}. Precio: ${productos["a* men recarga"].precio} Bs. Stock disponible: ${productos["a* men recarga"].stock} unidades.`,
-    "descripcion de a men recarga": `A* Men Recarga: ${productos["a* men recarga"].descripcion}. Precio: ${productos["a* men recarga"].precio} Bs. Stock disponible: ${productos["a* men recarga"].stock} unidades.`,
+    "esta polo black": `Polo Black: ${productos["polo black"].precio} Bs.`,
+    "men recarga": `A* Men Recarga: ${productos["a* men recarga"].descripcion}. Precio: ${productos["a* men recarga"].precio} Bs. Stock disponible: ${productos["a* men recarga"].stock} unidades.`,
+    "men recarga": `A* Men Recarga: ${productos["a* men recarga"].descripcion}. Precio: ${productos["a* men recarga"].precio} Bs. Stock disponible: ${productos["a* men recarga"].stock} unidades.`,
     "precio en a men recarga": `A* Men Recarga: ${productos["a* men recarga"].precio} Bs.`,
     "precio de a men recarga": `A* Men Recarga: ${productos["a* men recarga"].precio} Bs.`,
+    "esta a men recarga": `A* Men Recarga: ${productos["a* men recarga"].precio} Bs.`,
     "precio tiene polo blue": `Polo Blue: ${productos["polo blue"].precio} Bs.`,
     "precio de polo blue": `Polo Blue: ${productos["polo blue"].precio} Bs.`,
     "precio en polo blue": `Polo Blue: ${productos["polo blue"].precio} Bs.`,
-    "precio de polo blue": `Polo Blue: ${productos["polo blue"].precio} Bs.`,
+    "esta polo blue": `Polo Blue: ${productos["polo blue"].precio} Bs.`,
     "precio tiene wour poure homme": `Wour Poure Homme: ${productos["wour poure homme"].precio} Bs.`,
     "precio de wour poure homme": `Wour Poure Homme: ${productos["wour poure homme"].precio} Bs.`,
 
 
-    "que productos tienes": `Actualmente, contamos con los siguientes productos: Polo Blue, Wour Poure Homme, Uomo, Polo Black, A* Men Recarga.`,
+    "productos ": `Actualmente, contamos con los siguientes productos: Polo Blue, Wour Poure Homme, Uomo, Polo Black, A* Men Recarga.`,
     "listame": `Los productos disponibles son: Polo Blue, Wour Poure Homme, Uomo, Polo Black, A* Men Recarga.`,
     "cuales son tus ": `Nuestros productos disponibles son: Polo Blue, Wour Poure Homme, Uomo, Polo Black, A* Men Recarga.`,
     "muestrame los perfumes que tienes": `Los perfumes disponibles son: Polo Blue, Wour Poure Homme, Uomo, Polo Black, A* Men Recarga.`,
@@ -266,19 +450,26 @@ document.addEventListener("DOMContentLoaded", function () {
   "quiero saber sobre tus perfumes": `Contamos con Polo Blue, Wour Poure Homme, Uomo, Polo Black y A* Men Recarga.`,
   "enséñame tus productos": `Te presento nuestros productos: Polo Blue, Wour Poure Homme, Uomo, Polo Black, A* Men Recarga.`,
   "disponibles": `Te presento nuestros productos: Polo Blue, Wour Poure Homme, Uomo, Polo Black, A* Men Recarga.`,
-  "es polo blue": `Polo Blue es una exótica fragancia floral con toques cítricos que te transporta a un jardín primaveral vibrante y encantador. Precio: ${productos["polo blue"].precio} Bs. Stock disponible: ${productos["polo blue"].stock} unidades.`,
+  "polo blue": `Polo Blue es una exótica fragancia floral con toques cítricos que te transporta a un jardín primaveral vibrante y encantador. Precio: ${productos["polo blue"].precio} Bs. Stock disponible: ${productos["polo blue"].stock} unidades.`,
   "descripción de polo blue": `Polo Blue es una exótica fragancia floral con toques cítricos que te transporta a un jardín primaveral vibrante y encantador. Precio: ${productos["polo blue"].precio} Bs. Stock disponible: ${productos["polo blue"].stock} unidades.`,
   "es wour poure homme": `Wour Poure Homme es una exótica fragancia floral con toques cítricos que te lleva a un jardín primaveral vibrante y encantador. Precio: ${productos["wour poure homme"].precio} Bs. Stock disponible: ${productos["wour poure homme"].stock} unidades.`,
   "descripción de wour poure homme": `Wour Poure Homme es una exótica fragancia floral con toques cítricos que te lleva a un jardín primaveral vibrante y encantador. Precio: ${productos["wour poure homme"].precio} Bs. Stock disponible: ${productos["wour poure homme"].stock} unidades.`,
-  " es uomo": `Uomo es una exótica fragancia floral con toques cítricos que te lleva a un jardín primaveral vibrante y encantador. Precio: ${productos["uomo"].precio} Bs. Stock disponible: ${productos["uomo"].stock} unidades.`,
+  "uomo": `Uomo es una exótica fragancia floral con toques cítricos que te lleva a un jardín primaveral vibrante y encantador. Precio: ${productos["uomo"].precio} Bs. Stock disponible: ${productos["uomo"].stock} unidades.`,
   "descripción de uomo": `Uomo es una exótica fragancia floral con toques cítricos que te lleva a un jardín primaveral vibrante y encantador. Precio: ${productos["uomo"].precio} Bs. Stock disponible: ${productos["uomo"].stock} unidades.`,
   "es polo black": `Polo Black es una exótica fragancia floral con toques cítricos que te lleva a un jardín primaveral vibrante y encantador. Precio: ${productos["polo black"].precio} Bs. Stock disponible: ${productos["polo black"].stock} unidades.`,
   "descripción de polo black": `Polo Black es una exótica fragancia floral con toques cítricos que te lleva a un jardín primaveral vibrante y encantador. Precio: ${productos["polo black"].precio} Bs. Stock disponible: ${productos["polo black"].stock} unidades.`,
   "es a men recarga": `A* Men Recarga es una exótica fragancia floral con toques cítricos que te lleva a un jardín primaveral vibrante y encantador. Precio: ${productos["a* men recarga"].precio} Bs. Stock disponible: ${productos["a* men recarga"].stock} unidades.`,
   "dime la descripción de a* men recarga": `A* Men Recarga es una exótica fragancia floral con toques cítricos que te lleva a un jardín primaveral vibrante y encantador. Precio: ${productos["a* men recarga"].precio} Bs. Stock disponible: ${productos["a* men recarga"].stock} unidades.`,
    
-  
-  // ... (resto del código)
+ // Preguntas sobre fragancias
+ "fragancias": "Actualmente, contamos con los siguientes productos: Polo Blue, Wour Poure Homme, Uomo, Polo Black, A* Men Recarga.",
+  " tipos": "Tenemos fragancias como Polo Blue, Wour Poure Homme, Uomo, Polo Black y A* Men Recarga.",
+  "son tus fragancias": "Nuestros productos disponibles son: Polo Blue, Wour Poure Homme, Uomo, Polo Black, A* Men Recarga.",
+  "¿fragancias disponibles?": "Te presento nuestros productos: Polo Blue, Wour Poure Homme, Uomo, Polo Black, A* Men Recarga.",
+  "fragancia": "Tenemos fragancias como Polo Blue, Wour Poure Homme, Uomo, Polo Black y A* Men Recarga.",
+ 
+ 
+  // "contacto maria machaca": "¡Claro! Puedes ponerte en contacto con María Machaca a través de WhatsApp haciendo clic [aquí](https://wa.me/60579768)."
   };
 
   // Busca coincidencias parciales en el mensaje del usuario
@@ -287,12 +478,13 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Si hay coincidencias, elige la respuesta correspondiente
-  const botResponse = matchedResponses ? matchedResponses[1] : "No entiendo esa pregunta.";
+  const botResponse = matchedResponses ? matchedResponses[1] : "No he podido comprender tu pregunta. Por favor, reformúlala o proporciona más detalles para que pueda ayudarte de la mejor manera posible."
+;
 
   showMessage(botResponse);
   };
   btnSend.addEventListener("click", () => sendMessage());
-
+ 
   chatForm.addEventListener("submit", function (e) {
     e.preventDefault();
     sendMessage();
@@ -313,7 +505,7 @@ document.addEventListener("DOMContentLoaded", function () {
       chatInput.value = "";
     }
   };
-
+ 
   const clearChat = () => {
     chatBody.innerHTML = "";
   };
@@ -326,6 +518,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 </script>
+
 
 
 
