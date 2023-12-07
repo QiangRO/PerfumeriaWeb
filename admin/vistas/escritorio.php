@@ -73,7 +73,7 @@ if (!isset($_SESSION['nombre'])) {
                     <div class="small-box bg-aqua">
                       <div class="inner">
                         <h4 style="font-size: 17px;">
-                          <strong>S/. <?php echo $totalc; ?> </strong>
+                          <strong>BOB. <?php echo $totalc; ?> </strong>
                         </h4>
                         <p>Compras</p>
                       </div>
@@ -87,7 +87,7 @@ if (!isset($_SESSION['nombre'])) {
                     <div class="small-box bg-green">
                       <div class="inner">
                         <h4 style="font-size: 17px;">
-                          <strong>S/. <?php echo $totalv; ?> </strong>
+                          <strong>BOB. <?php echo $totalv; ?> </strong>
                         </h4>
                         <p>Ventas</p>
                       </div>
@@ -146,7 +146,7 @@ if (!isset($_SESSION['nombre'])) {
       data: {
         labels: [<?php echo $fechasc ?>],
         datasets: [{
-          label: '# Compras en S/. de los últimos 10 dias',
+          label: '# Compras en BOB de los últimos 10 dias',
           data: [<?php echo $totalesc ?>],
           backgroundColor: [
             'rgba(255, 99, 132, 0.2)',
@@ -191,7 +191,7 @@ if (!isset($_SESSION['nombre'])) {
       data: {
         labels: [<?php echo $fechasv ?>],
         datasets: [{
-          label: '# Ventas en S/. de los últimos 12 meses',
+          label: '# Ventas en BOB. de los últimos 12 meses',
           data: [<?php echo $totalesv ?>],
           backgroundColor: [
             'rgba(255, 99, 132, 0.2)',

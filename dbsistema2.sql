@@ -165,7 +165,9 @@ INSERT INTO `permiso` (`idpermiso`, `nombre`) VALUES
 (2, 'Almacen'),
 (3, 'Compras'),
 (4, 'Ventas'),
-(5, 'Acceso');
+(5, 'Acceso'),
+(6, 'Consulta Compras'),
+(7, 'Consulta Ventas');
 
 -- --------------------------------------------------------
 
