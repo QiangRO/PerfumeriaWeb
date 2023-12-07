@@ -7,7 +7,7 @@ class Articulo
 	public function __construct()
 	{
 	}
-	//metodo insertar regiustro
+	//metodo insertar registro
 	public function insertar($idcategoria, $codigo, $nombre, $stock, $descripcion, $imagen)
 	{
 		$sql = "INSERT INTO articulo (idcategoria,codigo,nombre,stock,descripcion,imagen,condicion)
