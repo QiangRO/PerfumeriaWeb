@@ -65,6 +65,18 @@ BEGIN
 END;
 $$
 DELIMITER ;
+
+DELIMITER $$
+CREATE TRIGGER `tr_updCondicionStockMayorCero`
+BEFORE UPDATE ON articulo
+FOR EACH ROW
+BEGIN
+    IF NEW.stock > 0 THEN
+        SET NEW.condicion = 1;
+    END IF;
+END;
+$$
+DELIMITER ;
 --
 -- Estructura de tabla para la tabla `categoria`
 --

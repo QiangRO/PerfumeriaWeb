@@ -69,31 +69,49 @@ function listar() {
 			}
 		},
 		"bDestroy": true,
-		"iDisplayLength": 5,//paginacion
+		"iDisplayLength": 10,//paginacion
 		"order": [[0, "desc"]]//ordenar (columna, orden)
 	}).DataTable();
 }
-//funcion para guardaryeditar
+// Función para guardaryeditar
 function guardaryeditar(e) {
-	e.preventDefault();//no se activara la accion predeterminada 
-	$("#btnGuardar").prop("disabled", true);
-	var formData = new FormData($("#formulario")[0]);
+    e.preventDefault(); // No se activará la acción predeterminada
+    $("#btnGuardar").prop("disabled", true);
 
-	$.ajax({
-		url: "../ajax/articulo.php?op=guardaryeditar",
-		type: "POST",
-		data: formData,
-		contentType: false,
-		processData: false,
+    // Validar que se haya seleccionado una imagen
+    if ($("#imagen")[0].files.length === 0) {
+        $(".error-message").text("Selecciona una imagen antes de enviar el formulario.");
+        $("#btnGuardar").prop("disabled", false);
+        return;
+    }
 
-		success: function (datos) {
-			bootbox.alert(datos);
-			mostrarform(false);
-			tabla.ajax.reload();
-		}
-	});
+    // Validar la extensión del archivo
+    var fileExtension = $("#imagen").val().split('.').pop().toLowerCase();
+    if (["jpg", "jpeg", "png"].indexOf(fileExtension) === -1) {
+        $(".error-message").text("Solo se permite subir archivos en formato jpg, jpeg, png.");
+        $("#btnGuardar").prop("disabled", false);
+        return;
+    }
 
-	limpiar();
+    $(".error-message").text(""); // Limpiar el mensaje de error
+
+    var formData = new FormData($("#formulario")[0]);
+
+    $.ajax({
+        url: "../ajax/articulo.php?op=guardaryeditar",
+        type: "POST",
+        data: formData,
+        contentType: false,
+        processData: false,
+
+        success: function (datos) {
+            bootbox.alert(datos);
+            mostrarform(false);
+            tabla.ajax.reload();
+        }
+    });
+
+    limpiar();
 }
 
 function mostrar(idarticulo) {
@@ -143,18 +161,6 @@ function desactivar(idarticulo) {
     });
 }
 
-// //funcion para desactivar
-// function desactivar(idarticulo) {
-// 	bootbox.confirm("¿Esta seguro de desactivar este dato?", function (result) {
-// 		if (result) {
-// 			$.post("../ajax/articulo.php?op=desactivar", { idarticulo: idarticulo }, function (e) {
-// 				bootbox.alert(e);
-// 				tabla.ajax.reload();
-// 			});
-// 		}
-// 	})
-// }
-
 // Función para activar
 function activar(idarticulo) {
     // Obtener el stock del artículo
@@ -180,16 +186,6 @@ function activar(idarticulo) {
         }
     });
 }
-// function activar(idarticulo) {
-// 	bootbox.confirm("¿Esta seguro de activar este dato?", function (result) {
-// 		if (result) {
-// 			$.post("../ajax/articulo.php?op=activar", { idarticulo: idarticulo }, function (e) {
-// 				bootbox.alert(e);
-// 				tabla.ajax.reload();
-// 			});
-// 		}
-// 	})
-// }
 
 function generarbarcode() {
 	codigo = $("#codigo").val();
