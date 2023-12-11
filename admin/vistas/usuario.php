@@ -69,7 +69,7 @@ if (!isset($_SESSION['nombre'])) {
                   </div>
                   <div class="form-group col-lg-6 col-md-6 col-xs-12">
                     <label for="num_documento">Numero de Documento(*):</label>
-                    <input type="text" class="form-control" name="num_documento" id="num_documento" placeholder="Documento" maxlength="20">
+                    <input type="number" class="form-control" name="num_documento" id="num_documento" placeholder="Documento" maxlength="20">
                   </div>
                   <div class="form-group col-lg-6 col-md-6 col-xs-12">
                     <label for="direccion">Direccion</label>
@@ -77,7 +77,7 @@ if (!isset($_SESSION['nombre'])) {
                   </div>
                   <div class="form-group col-lg-6 col-md-6 col-xs-12">
                     <label for="telefono">Telefono</label>
-                    <input class="form-control" type="text" name="telefono" id="telefono" maxlength="20" placeholder="Número de telefono">
+                    <input class="form-control" type="number" name="telefono" id="telefono" maxlength="20" placeholder="Número de telefono">
                   </div>
                   <div class="form-group col-lg-6 col-md-6 col-xs-12">
                     <label for="email">Email: </label>

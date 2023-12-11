@@ -21,11 +21,13 @@ class Articulo
 	WHERE idarticulo='$idarticulo'";
 		return ejecutarConsulta($sql);
 	}
+
 	public function desactivar($idarticulo)
 	{
 		$sql = "UPDATE articulo SET condicion='0' WHERE idarticulo='$idarticulo'";
 		return ejecutarConsulta($sql);
 	}
+
 	public function activar($idarticulo)
 	{
 		$sql = "UPDATE articulo SET condicion='1' WHERE idarticulo='$idarticulo'";
@@ -60,4 +62,3 @@ class Articulo
 		return ejecutarConsulta($sql);
 	}
 }
-?>

@@ -72,8 +72,13 @@ if (strlen(session_id()) < 1)
 
             <?php
             if ($_SESSION['ventas'] == 1) {
-              echo ' <li><a href="venta.php"><i class="fa fa-shopping-cart"></i> ventas</a></li>
+              echo ' <li><a href="venta.php"><i class="fa fa-ticket"></i> ventas</a></li>
               <li><a href="cliente.php"><i class="fa fa-user"></i> clientes</a></li> ';
+            }
+            ?>
+            <?php
+            if ($_SESSION['pedidos'] == 1) {
+              echo '<li><a href="pedidos.php"><i class="fa fa-shopping-bag"></i> Pedidos</a></li>';
             }
             ?>
 
@@ -82,7 +87,7 @@ if (strlen(session_id()) < 1)
               echo '<li><a href="usuario.php"><i class="fa fa-users"></i> Usuarios</a></li>
               <li><a href="permiso.php"><i class="fa fa-address-card"></i> Permisos</a></li>';
             }
-            ?> 
+            ?>
             <?php
             if ($_SESSION['consultac'] == 1) {
               echo '<!-- <li><a href="comprasfecha.php"><i class="fa fa-circle-o"></i>Compras por fechas</a></li>-->';
@@ -104,10 +109,11 @@ if (strlen(session_id()) < 1)
                 <!-- User image -->
                 <li class="user-header">
                   <img src="../files/usuarios/<?php echo $_SESSION['imagen']; ?>" class="img-circle" alt="User Image">
-                   <p>
-                   <?php echo $_SESSION['nombre']; ?>
+                  <p>
+                    <?php echo $_SESSION['nombre']; ?>
+                    <?php echo $_SESSION['cargo']; ?>
 
-                  </p> 
+                  </p>
                 </li>
                 <!-- Menu Footer-->
                 <li class="user-footer">

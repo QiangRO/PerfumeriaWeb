@@ -9,7 +9,7 @@ function init() {
 		guardaryeditar(e);
 	})
 
-	//cargamos los items al celect categoria
+	//cargamos los items al select categoria
 	$.post("../ajax/articulo.php?op=selectCategoria", function (r) {
 		$("#idcategoria").html(r);
 		$("#idcategoria").selectpicker('refresh');
@@ -117,28 +117,79 @@ function mostrar(idarticulo) {
 }
 
 
-//funcion para desactivar
+//Función para desactivar
 function desactivar(idarticulo) {
-	bootbox.confirm("¿Esta seguro de desactivar este dato?", function (result) {
-		if (result) {
-			$.post("../ajax/articulo.php?op=desactivar", { idarticulo: idarticulo }, function (e) {
-				bootbox.alert(e);
-				tabla.ajax.reload();
-			});
-		}
-	})
+    // Obtener el stock del artículo
+    $.post("../ajax/articulo.php?op=mostrar", { idarticulo: idarticulo }, function (data) {
+        var articulo = JSON.parse(data);
+        var stock = articulo.stock;
+
+        // Verificar si el stock es 0
+        if (stock == 0) {
+            // Si el stock es 0, mostrar un mensaje indicando que el producto está agotado
+            bootbox.alert("No se puede desactivar el producto porque está agotado.");
+        } else {
+            // Si el stock no es 0, confirmar la desactivación
+            bootbox.confirm("¿Está seguro de desactivar este producto?", function (result) {
+                if (result) {
+                    // Realizar la desactivación
+                    $.post("../ajax/articulo.php?op=desactivar", { idarticulo: idarticulo }, function (e) {
+                        bootbox.alert(e);
+                        tabla.ajax.reload();
+                    });
+                }
+            });
+        }
+    });
 }
 
+// //funcion para desactivar
+// function desactivar(idarticulo) {
+// 	bootbox.confirm("¿Esta seguro de desactivar este dato?", function (result) {
+// 		if (result) {
+// 			$.post("../ajax/articulo.php?op=desactivar", { idarticulo: idarticulo }, function (e) {
+// 				bootbox.alert(e);
+// 				tabla.ajax.reload();
+// 			});
+// 		}
+// 	})
+// }
+
+// Función para activar
 function activar(idarticulo) {
-	bootbox.confirm("¿Esta seguro de activar este dato?", function (result) {
-		if (result) {
-			$.post("../ajax/articulo.php?op=activar", { idarticulo: idarticulo }, function (e) {
-				bootbox.alert(e);
-				tabla.ajax.reload();
-			});
-		}
-	})
+    // Obtener el stock del artículo
+    $.post("../ajax/articulo.php?op=mostrar", { idarticulo: idarticulo }, function (data) {
+        var articulo = JSON.parse(data);
+        var stock = articulo.stock;
+
+        // Verificar si el stock es 0
+        if (stock == 0) {
+            // Si el stock es 0, mostrar un mensaje indicando que el producto está agotado
+            bootbox.alert("No se puede activar el producto porque está agotado.");
+        } else {
+            // Si el stock no es 0, confirmar la activación
+            bootbox.confirm("¿Está seguro de activar este producto?", function (result) {
+                if (result) {
+                    // Realizar la activación
+                    $.post("../ajax/articulo.php?op=activar", { idarticulo: idarticulo }, function (e) {
+                        bootbox.alert(e);
+                        tabla.ajax.reload();
+                    });
+                }
+            });
+        }
+    });
 }
+// function activar(idarticulo) {
+// 	bootbox.confirm("¿Esta seguro de activar este dato?", function (result) {
+// 		if (result) {
+// 			$.post("../ajax/articulo.php?op=activar", { idarticulo: idarticulo }, function (e) {
+// 				bootbox.alert(e);
+// 				tabla.ajax.reload();
+// 			});
+// 		}
+// 	})
+// }
 
 function generarbarcode() {
 	codigo = $("#codigo").val();
