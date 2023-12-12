@@ -66,7 +66,7 @@ if (strlen(session_id()) < 1)
             <?php
             if ($_SESSION['compras'] == 1) {
               echo '<!-- <li><a href="ingreso.php"><i class="fa fa-circle-o"></i> Ingresos</a></li>-->
-              <li><a href="proveedor.php"><i class="fa fa-truck"></i> Proveedores</a></li>';
+              <!-- <li><a href="proveedor.php"><i class="fa fa-truck"></i> Proveedores</a></li> -->';
             }
             ?>
 
@@ -76,16 +76,11 @@ if (strlen(session_id()) < 1)
               <li><a href="cliente.php"><i class="fa fa-user"></i> clientes</a></li> ';
             }
             ?>
-            <?php
-            if ($_SESSION['pedidos'] == 1) {
-              echo '<li><a href="pedidos.php"><i class="fa fa-shopping-bag"></i> Pedidos</a></li>';
-            }
-            ?>
 
             <?php
             if ($_SESSION['acceso'] == 1) {
               echo '<li><a href="usuario.php"><i class="fa fa-users"></i> Usuarios</a></li>
-              <li><a href="permiso.php"><i class="fa fa-address-card"></i> Permisos</a></li>';
+              <!--<li><a href="permiso.php"><i class="fa fa-address-card"></i> Permisos</a></li> -->';
             }
             ?>
             <?php

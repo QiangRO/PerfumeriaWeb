@@ -103,9 +103,10 @@ if (!isset($_SESSION['nombre'])) {
                   </div>
                   <div class="form-group col-lg-6 col-md-6 col-xs-12">
                     <label for="imagen">Imagen:</label>
-                    <input class="form-control" type="file" name="imagen" id="imagen">
+                    <input class="form-control" type="file" name="imagen" id="imagen" accept=".jpg, .jpeg, .png">
                     <input type="hidden" name="imagenactual" id="imagenactual">
                     <img src="" alt="" width="150px" height="120" id="imagenmuestra">
+                    <span class="error-message" style="color: red;"></span>
                   </div>
                   <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <button class="btn btn-primary" type="submit" id="btnGuardar"><i class="fa fa-save"></i> Guardar</button>

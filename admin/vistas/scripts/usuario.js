@@ -77,25 +77,43 @@ function listar() {
 }
 //funcion para guardaryeditar
 function guardaryeditar(e) {
-	e.preventDefault();//no se activara la accion predeterminada 
-	$("#btnGuardar").prop("disabled", true);
-	var formData = new FormData($("#formulario")[0]);
+    e.preventDefault(); // No se activará la acción predeterminada
+    $("#btnGuardar").prop("disabled", true);
 
-	$.ajax({
-		url: "../ajax/usuario.php?op=guardaryeditar",
-		type: "POST",
-		data: formData,
-		contentType: false,
-		processData: false,
+    // Validar que se haya seleccionado una imagen
+    if ($("#imagen")[0].files.length === 0) {
+        $(".error-message").text("Selecciona una imagen antes de enviar el formulario.");
+        $("#btnGuardar").prop("disabled", false);
+        return;
+    }
 
-		success: function (datos) {
-			bootbox.alert(datos);
-			mostrarform(false);
-			tabla.ajax.reload();
-		}
-	});
+    // Validar la extensión del archivo
+    var fileExtension = $("#imagen").val().split('.').pop().toLowerCase();
+    if (["jpg", "jpeg", "png"].indexOf(fileExtension) === -1) {
+        $(".error-message").text("Solo se permite subir archivos en formato jpg, jpeg, png.");
+        $("#btnGuardar").prop("disabled", false);
+        return;
+    }
 
-	limpiar();
+    $(".error-message").text(""); // Limpiar el mensaje de error
+
+    var formData = new FormData($("#formulario")[0]);
+
+    $.ajax({
+        url: "../ajax/usuario.php?op=guardaryeditar",
+        type: "POST",
+        data: formData,
+        contentType: false,
+        processData: false,
+
+        success: function (datos) {
+            bootbox.alert(datos);
+            mostrarform(false);
+            tabla.ajax.reload();
+        }
+    });
+
+    limpiar();
 }
 
 function mostrar(idusuario) {
