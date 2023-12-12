@@ -384,6 +384,8 @@ const kekoJonesBtn = document.getElementById("kekoJonesBtn");
 
   const botResponses = {
   
+
+
   // ... (resto del código)
   "beauty": "Beauty Station es tu destino de confianza para encontrar las mejores fragancias. Nos dedicamos a ofrecer productos de calidad para que te sientas y huelas increíble.",
   "horario": "Nuestro horario de atención es de lunes a viernes de 9:00 a.m. a 7:00 p.m. y los sábados de 10:00 a.m. a 4:00 p.m.",
@@ -476,6 +478,7 @@ const kekoJonesBtn = document.getElementById("kekoJonesBtn");
   "son tus fragancias": "Nuestros productos disponibles son: Polo Blue, Wour Poure Homme, Uomo, Polo Black, A* Men Recarga.",
   "¿fragancias disponibles?": "Te presento nuestros productos: Polo Blue, Wour Poure Homme, Uomo, Polo Black, A* Men Recarga.",
   "fragancia": "Tenemos fragancias como Polo Blue, Wour Poure Homme, Uomo, Polo Black y A* Men Recarga.",
+  "productos": "Tenemos fragancias como Polo Blue, Wour Poure Homme, Uomo, Polo Black y A* Men Recarga.",
  
  
   // "contacto maria machaca": "¡Claro! Puedes ponerte en contacto con María Machaca a través de WhatsApp haciendo clic [aquí](https://wa.me/60579768)."
