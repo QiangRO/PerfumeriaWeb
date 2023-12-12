@@ -51,7 +51,32 @@ INSERT INTO `articulo` (`idarticulo`, `idcategoria`, `codigo`, `nombre`, `stock`
 (10, 5, 'AMR2366', 'A* MEN RECARGA', 70, 'LOREM IPSUN  LOREM IPSUN  LOREM IPSUN  LOREM IPSUN  LOREM IPSUN  LOREM IPSUN', '1699102563.jpg', 0);
 
 -- --------------------------------------------------------
+--
+-- Disparadores `articulo`
+--
+DELIMITER $$
+CREATE TRIGGER `tr_updCondicionStockCero`
+BEFORE UPDATE ON articulo
+FOR EACH ROW
+BEGIN
+    IF NEW.stock = 0 THEN
+        SET NEW.condicion = 0;
+    END IF;
+END;
+$$
+DELIMITER ;
 
+DELIMITER $$
+CREATE TRIGGER `tr_updCondicionStockMayorCero`
+BEFORE UPDATE ON articulo
+FOR EACH ROW
+BEGIN
+    IF NEW.stock > 0 THEN
+        SET NEW.condicion = 1;
+    END IF;
+END;
+$$
+DELIMITER ;
 --
 -- Estructura de tabla para la tabla `categoria`
 --
@@ -165,7 +190,9 @@ INSERT INTO `permiso` (`idpermiso`, `nombre`) VALUES
 (2, 'Almacen'),
 (3, 'Compras'),
 (4, 'Ventas'),
-(5, 'Acceso');
+(5, 'Acceso'),
+(6, 'Consulta Compras'),
+(7, 'Consulta Ventas');
 
 -- --------------------------------------------------------
 

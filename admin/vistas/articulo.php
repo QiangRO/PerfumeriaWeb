@@ -22,9 +22,6 @@ if (!isset($_SESSION['nombre'])) {
                   <button class="btn btn-success" onclick="mostrarform(true)" id="btnagregar">
                     <i class="fa fa-plus-circle"></i>Agregar
                   </button>
-                  <!-- <a target="_blank" href="../reportes/rptarticulos.php">
-                    <button class="btn btn-info">Reporte</button>
-                  </a> -->
                 </h1>
                 <div class="box-tools pull-right">
 
@@ -62,7 +59,7 @@ if (!isset($_SESSION['nombre'])) {
                   </div>
                   <div class="form-group col-lg-6 col-md-6 col-xs-12">
                     <label for="">Stock</label>
-                    <input class="form-control" type="number" name="stock" id="stock" required>
+                    <input class="form-control" type="number" name="stock" id="stock" required min="0">
                   </div>
                   <div class="form-group col-lg-6 col-md-6 col-xs-12">
                     <label for="">Descripcion</label>
@@ -70,20 +67,14 @@ if (!isset($_SESSION['nombre'])) {
                   </div>
                   <div class="form-group col-lg-6 col-md-6 col-xs-12">
                     <label for="">Imagen:</label>
-                    <input class="form-control" type="file" name="imagen" id="imagen">
+                    <input class="form-control" type="file" name="imagen" id="imagen" accept=".jpg, .jpeg, .png">
                     <input type="hidden" name="imagenactual" id="imagenactual">
                     <img src="" alt="" width="150px" height="120" id="imagenmuestra">
+                    <span class="error-message" style="color: red;"></span>
                   </div>
                   <div class="form-group col-lg-6 col-md-6 col-xs-12">
                     <label for="">Codigo:</label>
                     <input class="form-control" type="text" name="codigo" id="codigo" placeholder="codigo del prodcuto" required>
-
-                    <!-- <button class="btn btn-success" type="button" onclick="generarbarcode()">Generar
-                    </button>
-                    
-                    <button class="btn btn-info" type="button" onclick="imprimir()">
-                      Imprimir
-                    </button> -->
                     <div id="print">
                       <svg id="barcode"></svg>
                     </div>

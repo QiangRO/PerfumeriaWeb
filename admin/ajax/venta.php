@@ -69,7 +69,7 @@ switch ($_GET["op"]) {
          <th></th>
          <th></th>
          <th></th>
-         <th><h4 id="total">S/. ' . $total . '</h4><input type="hidden" name="total_venta" id="total_venta"></th>
+         <th><h4 id="total">BOB. ' . $total . '</h4><input type="hidden" name="total_venta" id="total_venta"></th>
        </tfoot>';
 		break;
 
@@ -86,7 +86,7 @@ switch ($_GET["op"]) {
 
 			$data[] = array(
 				"0" => (($reg->estado == 'Aceptado') ? '<button class="btn btn-warning btn-xs" onclick="mostrar(' . $reg->idventa . ')"><i class="fa fa-eye"></i></button>' . ' ' . '<button class="btn btn-danger btn-xs" onclick="anular(' . $reg->idventa . ')"><i class="fa fa-close"></i></button>' : '<button class="btn btn-warning btn-xs" onclick="mostrar(' . $reg->idventa . ')"><i class="fa fa-eye"></i></button>') .
-					'<a target="_blank" href="' . $url . $reg->idventa . '"> <button class="btn btn-info btn-xs"><i class="fa fa-file"></i></button></a>',
+					'<a target="_blank" href="' . $url . $reg->idventa . '"> </a>',
 				"1" => $reg->fecha,
 				"2" => $reg->cliente,
 				"3" => $reg->usuario,

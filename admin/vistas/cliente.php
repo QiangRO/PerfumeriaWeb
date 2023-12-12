@@ -37,14 +37,14 @@ if (!isset($_SESSION['nombre'])) {
                   </thead>
                   <tbody>
                   </tbody>
-                  <tfoot>
+                  <!-- <tfoot>
                     <th>Opciones</th>
                     <th>Nombre</th>
                     <th>Documento</th>
                     <th>Numero</th>
                     <th>Telefono</th>
                     <th>Email</th>
-                  </tfoot>
+                  </tfoot> -->
                 </table>
               </div>
               <div class="panel-body" style="height: 400px;" id="formularioregistros">

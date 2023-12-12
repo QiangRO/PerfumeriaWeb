@@ -7,7 +7,7 @@ class Articulo
 	public function __construct()
 	{
 	}
-	//metodo insertar regiustro
+	//metodo insertar registro
 	public function insertar($idcategoria, $codigo, $nombre, $stock, $descripcion, $imagen)
 	{
 		$sql = "INSERT INTO articulo (idcategoria,codigo,nombre,stock,descripcion,imagen,condicion)
@@ -21,11 +21,13 @@ class Articulo
 	WHERE idarticulo='$idarticulo'";
 		return ejecutarConsulta($sql);
 	}
+
 	public function desactivar($idarticulo)
 	{
 		$sql = "UPDATE articulo SET condicion='0' WHERE idarticulo='$idarticulo'";
 		return ejecutarConsulta($sql);
 	}
+
 	public function activar($idarticulo)
 	{
 		$sql = "UPDATE articulo SET condicion='1' WHERE idarticulo='$idarticulo'";
@@ -60,4 +62,3 @@ class Articulo
 		return ejecutarConsulta($sql);
 	}
 }
-?>

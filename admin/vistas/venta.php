@@ -42,7 +42,7 @@ if ($_SESSION['ventas']==1) {
     </thead>
     <tbody>
     </tbody>
-    <tfoot>
+    <!-- <tfoot>
       <th>Opciones</th>
       <th>Fecha</th>
       <th>Cliente</th>
@@ -51,7 +51,7 @@ if ($_SESSION['ventas']==1) {
       <th>Número</th>
       <th>Total Venta</th>
       <th>Estado</th>
-    </tfoot>   
+    </tfoot>-->
   </table>
 </div>
 <div class="panel-body" style="height: 400px;" id="formularioregistros">
@@ -108,7 +108,7 @@ if ($_SESSION['ventas']==1) {
          <th></th>
          <th></th>
          <th></th>
-         <th><h4 id="total">S/. 0.00</h4><input type="hidden" name="total_venta" id="total_venta"></th>
+         <th><h4 id="total">BOB. 0.00</h4><input type="hidden" name="total_venta" id="total_venta"></th>
        </tfoot>
        <tbody>
          

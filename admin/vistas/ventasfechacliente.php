@@ -58,7 +58,7 @@ if ($_SESSION['consultav']==1) {
     </thead>
     <tbody>
     </tbody>
-    <tfoot>
+    <!-- <tfoot>
       <th>Fecha</th>
       <th>Usuario</th>
       <th>Proveedor</th>
@@ -67,7 +67,7 @@ if ($_SESSION['consultav']==1) {
       <th>Total Compra</th>
       <th>Impuesto</th>
       <th>Estado</th>
-    </tfoot>   
+    </tfoot>    -->
   </table>
 </div>
 
